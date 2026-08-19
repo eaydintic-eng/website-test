@@ -1,0 +1,24 @@
+:root {
+  /* The beam — vertical light shaft behind hero type */
+  --gradient-beam: linear-gradient(180deg, rgba(11,92,255,0) 0%, rgba(61,130,255,0.35) 22%, rgba(214,228,255,0.95) 50%, rgba(61,130,255,0.35) 78%, rgba(11,92,255,0) 100%); /* @kind other */
+  /* Deep-space canvas wash */
+  --gradient-canvas: radial-gradient(120% 80% at 50% 0%, #0d2352 0%, #060c1c 45%, #04060c 100%); /* @kind other */
+  --gradient-canvas-light: radial-gradient(120% 80% at 50% 0%, #eff4ff 0%, #ffffff 60%); /* @kind other */
+  /* Brand fill for buttons and pills */
+  --gradient-brand: linear-gradient(180deg, #3d82ff 0%, #0b5cff 100%); /* @kind other */
+  --gradient-brand-hover: linear-gradient(180deg, #5b96ff 0%, #1f6bff 100%); /* @kind other */
+  /* Aurora — blue -> violet -> aqua, for large soft fields and animated washes */
+  --gradient-aurora: linear-gradient(115deg, #0b5cff 0%, #5b4bff 42%, #21d9c2 100%); /* @kind other */
+  --gradient-aurora-soft: linear-gradient(115deg, rgba(11,92,255,0.55) 0%, rgba(91,75,255,0.4) 45%, rgba(33,217,194,0.45) 100%); /* @kind other */
+  /* Text gradient — headline second line only */
+  --gradient-text: linear-gradient(180deg, #ffffff 0%, #93b6ff 100%); /* @kind other */
+  --gradient-text-accent: linear-gradient(96deg, #6fa3ff 0%, #21d9c2 100%); /* @kind other */
+  /* Card edge light — 1px top highlight that fades out at the corners */
+  --gradient-edge: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0) 100%); /* @kind other */
+  /* Protection gradient — laid under text sitting on imagery */
+  --gradient-protect-b: linear-gradient(180deg, rgba(4,6,12,0) 0%, rgba(4,6,12,0.85) 78%, #04060c 100%); /* @kind other */
+  --gradient-protect-t: linear-gradient(180deg, rgba(4,6,12,0.9) 0%, rgba(4,6,12,0) 100%); /* @kind other */
+  /* Grid / starfield overlays */
+  --pattern-grid: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); /* @kind other */
+  --pattern-grid-size: 64px 64px; /* @kind other */
+}

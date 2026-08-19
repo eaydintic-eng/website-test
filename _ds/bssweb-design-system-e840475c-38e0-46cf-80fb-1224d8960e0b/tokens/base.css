@@ -1,0 +1,36 @@
+/* Minimal element defaults. Components carry their own styling. */
+:root { color-scheme: dark; }
+[data-theme="light"] { color-scheme: light; }
+
+body {
+  margin: 0;
+  background: var(--surface-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--body-md-size);
+  line-height: var(--body-md-line);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+a { color: var(--text-brand); text-decoration: none; transition: color var(--dur-fast) var(--ease-standard); }
+a:hover { color: var(--blue-300); }
+[data-theme="light"] a:hover { color: var(--blue-500); }
+
+::selection { background: rgba(11, 92, 255, 0.4); color: #fff; }
+
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+h1, h2, h3, h4, h5, p, figure { margin: 0; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--ink-600); border-radius: var(--radius-pill); border: 3px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-500); background-clip: content-box; }

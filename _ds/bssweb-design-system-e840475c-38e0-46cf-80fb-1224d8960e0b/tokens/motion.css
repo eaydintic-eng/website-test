@@ -1,0 +1,44 @@
+:root {
+  /* Durations */
+  --dur-instant: 80ms; /* @kind other */
+  --dur-fast: 140ms; /* @kind other */
+  --dur-quick: 220ms; /* @kind other */
+  --dur-base: 320ms; /* @kind other */
+  --dur-slow: 520ms; /* @kind other */
+  --dur-slower: 800ms; /* @kind other */
+  --dur-cinematic: 1400ms; /* @kind other */
+
+  /* Easings — expo-out is the house curve; everything decelerates */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1); /* @kind other */
+  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1); /* @kind other */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* @kind other */
+  --ease-linear: linear; /* @kind other */
+
+  /* Composed transitions */
+  --transition-control: background-color var(--dur-fast) var(--ease-standard), border-color var(--dur-fast) var(--ease-standard), color var(--dur-fast) var(--ease-standard), box-shadow var(--dur-quick) var(--ease-out-expo), transform var(--dur-fast) var(--ease-out-quart); /* @kind other */
+  --transition-surface: transform var(--dur-base) var(--ease-out-expo), box-shadow var(--dur-base) var(--ease-out-expo), border-color var(--dur-base) var(--ease-out-expo); /* @kind other */
+  --transition-reveal: opacity var(--dur-slow) var(--ease-out-expo), transform var(--dur-slow) var(--ease-out-expo); /* @kind other */
+
+  /* Scroll-reveal defaults consumed by the GSAP helper */
+  --reveal-y: 28px; /* @kind other */
+  --reveal-stagger: 70ms; /* @kind other */
+  --press-scale: 0.975; /* @kind other */
+  --hover-lift: -3px; /* @kind other */
+  --parallax-depth: 0.12; /* @kind other */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-quick: 1ms; /* @kind other */
+    --dur-base: 1ms; /* @kind other */
+    --dur-slow: 1ms; /* @kind other */
+    --dur-slower: 1ms; /* @kind other */
+    --dur-cinematic: 1ms; /* @kind other */
+    --reveal-y: 0px; /* @kind other */
+    --press-scale: 1; /* @kind other */
+    --hover-lift: 0px; /* @kind other */
+    --parallax-depth: 0; /* @kind other */
+  }
+}
