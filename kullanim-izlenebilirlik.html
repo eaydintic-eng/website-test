@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>İzlenebilirlik — BSS Kullanım</title>
+<meta name="description" content="Her ürünün geçmişi ve yolculuğu tek zincirde. İleri izleme bir hammaddenin hangi partilere gittiğini; geri izleme bir şikâyetin hangi bobin, vardiya ve ted" />
+<meta property="og:title" content="İzlenebilirlik — BSS Kullanım" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#dfeeff" />
+<link rel="icon" type="image/svg+xml" href="brand/logo/bss-mark-primary.svg" />
+
+<link rel="stylesheet" href="bss.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.min.js" defer></script>
+<style>
+  .lmask{clip-path:inset(0 0 100% 0);transition:clip-path .9s cubic-bezier(.16,1,.3,1);}
+  .lmask.in{clip-path:inset(0 0 -10% 0);}
+  .spot{position:relative;}
+  .spot::before{content:"";position:absolute;inset:0;border-radius:inherit;opacity:0;transition:opacity .4s;background:radial-gradient(240px circle at var(--mx,50%) var(--my,0%),rgba(11,92,255,0.16),transparent 60%);pointer-events:none;z-index:0;}
+  .spot:hover::before{opacity:1;}
+  @keyframes flowDot{0%{offset-distance:0%;opacity:0}12%{opacity:1}88%{opacity:1}100%{offset-distance:100%;opacity:0}}
+  @keyframes pktRun{from{transform:translateX(-30px);opacity:0}20%{opacity:1}80%{opacity:1}to{transform:translateX(30px);opacity:0}}
+</style>
+<script src="reveal-boot.js"></script>
+<script src="mobile-layer.js"></script>
+</helmet>
+
+<div style="position:relative;isolation:isolate;background:#dfeeff;">
+  <div aria-hidden="true" data-page-bg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;background-image:linear-gradient(168deg,rgba(11,92,255,.26) 0%,rgba(56,132,255,.12) 22%,rgba(255,255,255,0.1) 44%,rgba(23,148,184,.13) 68%,rgba(11,92,255,.28) 100%),url('brand/backgrounds/page-flow-light.webp');background-repeat:no-repeat;background-position:top center;background-size:100% 100%;"></div>
+
+  <!-- section progress rail -->
+  <div aria-hidden="true" data-rail="" style="position:fixed;top:50%;right:18px;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;align-items:center;gap:0;">
+    <span style="position:absolute;top:6px;bottom:6px;width:2px;background:rgba(13,27,46,0.1);"></span>
+    <span data-rail-fill="" style="position:absolute;top:6px;width:2px;height:0%;background:linear-gradient(180deg,#0b5cff,#1794b8);box-shadow:0 0 10px rgba(23,148,184,0.14);transition:height .2s linear;"></span>
+    <sc-for list="{{ rail }}" as="r" hint-placeholder-count="5">
+      <a href="{{ r.href }}" data-rail-dot="{{ r.i }}" title="{{ r.label }}" style="position:relative;z-index:2;width:11px;height:11px;margin:11px 0;border-radius:50%;transition:all .3s cubic-bezier(.16,1,.3,1);background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);"></a>
+    </sc-for>
+  </div>
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:100;padding-top:14px;pointer-events:none;">
+    <div style="width:100%;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div style="pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;height:58px;padding:0 12px 0 18px;border:1px solid rgba(13,27,46,0.1);border-radius:999px;background:rgba(255,255,255,0.62);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px) saturate(150%);box-shadow:0 12px 40px rgba(13,27,46,0.1),inset 0 1px 0 rgba(13,27,46,0.06);">
+        <a href="index.html" style="display:inline-flex;align-items:center;gap:11px;">
+          <img src="brand/logo/bss-logo-primary.svg" alt="BSS Technology" width="804" height="306" decoding="async" style="display:block;height:42px;width:auto;">
+        </a>
+        <span style="display:flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#55637a;">
+          <a href="index.html" style="color:#55637a;">KULLANIM SENARYOSU</a><span style="opacity:.5;">/</span><span style="color:#0a1424;">ÜRÜN İZLENEBİLİRLİĞİ</span>
+        </span>
+        <a href="#iletisim" style="display:inline-flex;align-items:center;height:38px;padding:0 18px;border-radius:999px;background:linear-gradient(180deg,#0b5cff,#0b5cff);color:#fff;font-size:14px;font-weight:600;white-space:nowrap;box-shadow:0 0 24px rgba(11,92,255,0.14),inset 0 1px 0 rgba(13,27,46,0.12);">Demo Talep Edin</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="s-hero" data-rail-sec="" data-screen-label="İzlenebilirlik hero" style="position:relative;overflow:hidden;padding:132px 0 40px;text-align:center;">
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;"><img fetchpriority="high" decoding="async" src="brand/backgrounds/sphere-horizon.webp" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center;" /><span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.5) 38%,rgba(255,255,255,0.12) 62%,rgba(255,255,255,0) 100%),linear-gradient(180deg,rgba(255,255,255,0.14) 0%,rgba(255,255,255,0.34) 44%,rgba(255,255,255,0.5) 78%,rgba(255,255,255,.42) 97%);"></span><span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.22) 52%,rgba(255,255,255,.22) 94%);"></span></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;">
+      <span data-par="0.18" style="position:absolute;left:50%;top:-26%;width:72vw;height:72vw;transform:translateX(-50%);border-radius:50%;background:conic-gradient(from 90deg,#0b5cff,#0b5cff,#1794b8,#0b5cff);filter:blur(150px);opacity:.2;mix-blend-mode:multiply;animation:auroraDrift 32s ease-in-out infinite;"></span>
+      <span style="position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 0%,rgba(11,92,255,0.14),transparent 60%);"></span>
+    </div>
+    <div style="position:relative;z-index:1;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <p class="reveal" style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0847c4;"><span style="width:22px;height:1px;background:#0b5cff;"></span>KULLANIM SENARYOSU · ÜRÜN İZLENEBİLİRLİĞİ</p>
+      <h1 class="lmask" style="max-width:20ch;margin:16px auto 0;font-size:clamp(32px,4.8vw,64px);line-height:1.12;color:#0a1424;">Hammaddeden müşteriye, <span style="display:inline-block;padding-bottom:.16em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;;line-height:1.14">kesintisiz iz.</span></h1>
+      <p class="reveal" style="max-width:64ch;margin:18px auto 0;color:#4c5a70;font-size:clamp(15px,1.15vw,19px);line-height:1.6;">Her ürünün geçmişi ve yolculuğu tek zincirde. İleri izleme bir hammaddenin hangi partilere gittiğini; geri izleme bir şikâyetin hangi bobin, vardiya ve tedarikçiden doğduğunu dakikalar içinde gösterir.</p>
+      <div class="reveal" style="display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-top:34px;">
+        <sc-for list="{{ heroStats }}" as="h" hint-placeholder-count="3">
+          <div style="text-align:center;">
+            <div data-count="{{ h.to }}" data-suffix="{{ h.suffix }}" data-prefix="{{ h.prefix }}" style="display:inline-block;padding-bottom:.16em;font-size:clamp(26px,3vw,40px);font-weight:700;letter-spacing:-.02em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-variant-numeric:tabular-nums;;line-height:1.14">{{ h.prefix }}0{{ h.suffix }}</div>
+            <p style="margin-top:4px;font-size:12px;letter-spacing:.04em;color:#4c5a70;">{{ h.label }}</p>
+          </div>
+        </sc-for>
+      </div>
+      <p class="reveal" style="margin-top:30px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#55637a;">AŞAĞI KAYDIRIN — ZİNCİR DÜĞÜM DÜĞÜM İLERLER</p>
+    </div>
+  </section>
+
+  <!-- PINNED SCROLL-SCRUB TRACE CHAIN -->
+  <section id="s-chain" data-rail-sec="" data-screen-label="İz zinciri" data-scrub-track="" style="position:relative;">
+    <div data-scrub-stage="" style="position:sticky;top:0;min-height:100vh;display:flex;align-items:center;overflow:hidden;">
+      <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;"><span data-par="0.1" style="position:absolute;right:-10%;top:10%;width:50vw;height:50vw;border-radius:50%;background:radial-gradient(closest-side,rgba(11,92,255,0.14),transparent 70%);filter:blur(60px);"></span></div>
+      <div style="position:relative;z-index:1;width:100%;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);padding-block:96px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px;">
+          <div>
+            <p style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0847c4;"><span style="width:22px;height:1px;background:#0b5cff;"></span>CANLI İZ ZİNCİRİ</p>
+            <h2 style="margin-top:10px;font-size:clamp(22px,2.6vw,34px);color:#0a1424;">Kraft çanta 28x16x28 · <span style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-weight: 400; font-size: 0.8em; color: rgb(143, 192, 255);">SN-2405180001</span></h2>
+          </div>
+          <div style="display:inline-flex;padding:4px;border-radius:999px;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+            <button type="button" onClick="{{ setForward }}" style="display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 15px;border:0;border-radius:999px;background:{{ fwdBg }};color:{{ fwdColor }};font-size:13px;font-weight:600;cursor:pointer;transition:all .24s;"><i data-lucide="arrow-right" style="width:14px;height:14px;"></i>İleri izleme</button>
+            <button type="button" onClick="{{ setBackward }}" style="display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 15px;border:0;border-radius:999px;background:{{ bwdBg }};color:{{ bwdColor }};font-size:13px;font-weight:600;cursor:pointer;transition:all .24s;"><i data-lucide="arrow-left" style="width:14px;height:14px;"></i>Geri izleme</button>
+          </div>
+        </div>
+
+        <!-- chain track -->
+        <div style="position:relative;padding:6px 0 2px;">
+          <div style="position:absolute;left:2%;right:2%;top:33px;height:2px;background:rgba(13,27,46,0.09);"></div>
+          <div data-chain-fill="" style="position:absolute;top:33px;height:2px;background:linear-gradient(90deg,#0b5cff,#1794b8);box-shadow:0 0 12px rgba(23,148,184,0.14);left:2%;width:0%;"></div>
+          <div data-chain-pkt="" style="position:absolute;top:29px;left:2%;width:9px;height:9px;border-radius:50%;background:#0b5cff;box-shadow:0 0 14px 3px rgba(11,92,255,0.14);opacity:0;"></div>
+          <div style="position:relative;display:grid;grid-template-columns:repeat(8,1fr);gap:0;">
+            <sc-for list="{{ chain }}" as="c" hint-placeholder-count="8">
+              <button type="button" onClick="{{ c.select }}" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:0 4px;border:0;background:none;cursor:pointer;">
+                <span style="display:grid;place-items:center;width:56px;height:56px;border-radius:16px;border:1px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }};box-shadow:{{ c.glow }};transform:{{ c.scale }};transition:all .34s cubic-bezier(.16,1,.3,1);"><i data-lucide="{{ c.icon }}" style="width:24px;height:24px;"></i></span>
+                <span style="font-size:12px;font-weight:600;color:{{ c.labelColor }};line-height:1.15;">{{ c.label }}</span>
+                <span style="font-size:11px;color:#55637a;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;">{{ c.code }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- active record + passport -->
+        <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:18px;margin-top:34px;align-items:stretch;">
+          <div class="spot" style="position:relative;overflow:hidden;padding:clamp(20px,2.6vw,28px);border-radius:20px;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+            <span style="position:absolute;top:0;left:26px;right:26px;height:1px;background:linear-gradient(90deg,transparent,rgba(13,27,46,0.12),transparent);"></span>
+            <div style="position:relative;z-index:1;display:flex;align-items:center;gap:14px;">
+              <span style="position:relative;display:grid;place-items:center;width:50px;height:50px;border-radius:16px;border:1px solid rgba(11,92,255,0.16);background:rgba(11,92,255,0.12);color:#0b5cff;"><sc-for list="{{ nodeIcons }}" as="ni" hint-placeholder-count="8"><span style="position:absolute;inset:0;display:grid;place-items:center;opacity:{{ ni.op }};transition:opacity .3s;"><i data-lucide="{{ ni.slug }}" style="width:25px;height:25px;"></i></span></sc-for></span>
+              <div><p style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#0847c4;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;">ADIM {{ activeNum }} / 8 · {{ activeCode }}</p><h3 style="margin-top:3px;font-size:clamp(19px,2vw,25px);color:#0a1424;">{{ activeTitle }}</h3></div>
+            </div>
+            <p style="position:relative;z-index:1;max-width:52ch;margin-top:15px;color:#4c5a70;font-size:14px;line-height:1.65;">{{ activeBody }}</p>
+            <div style="position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;">
+              <sc-for list="{{ activeFields }}" as="f" hint-placeholder-count="4">
+                <div style="padding:12px 14px;border-radius:12px;background:linear-gradient(150deg,rgba(255,255,255,.8),rgba(255,255,255,.6));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.7);box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 10px 22px -14px rgba(9,38,84,.3);"><p style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#55637a;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;">{{ f.k }}</p><p style="margin-top:5px;font-size:14px;font-weight:600;color:#0a1424;font-variant-numeric:tabular-nums;">{{ f.v }}</p></div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="position:relative;overflow:hidden;padding:clamp(20px,2.6vw,26px);border:1px solid rgba(13,27,46,0.09);border-radius:20px;background:linear-gradient(160deg,rgba(23,148,184,0.07),rgba(255,255,255,0.9));">
+            <span style="position:absolute;top:0;left:26px;right:26px;height:1px;background:linear-gradient(90deg,transparent,rgba(23,148,184,0.14),transparent);"></span>
+            <p style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#0f6f85;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;">ÜRÜN PASAPORTU</p>
+            <div style="display:flex;align-items:center;gap:13px;margin-top:14px;">
+              <span style="display:grid;place-items:center;width:58px;height:58px;border-radius:16px;background:linear-gradient(150deg,rgba(255,255,255,.8),rgba(255,255,255,.6));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.7);box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 10px 22px -14px rgba(9,38,84,.3);"><i data-lucide="qr-code" style="width:32px;height:32px;color:#4c5a70;"></i></span>
+              <div><p style="font-size:15px;font-weight:700;color:#0a1424;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;">SN-2405180001</p><p style="margin-top:2px;font-size:12px;color:#4c5a70;">WP-500 · Kraft çanta 32×40</p></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px;">
+              <sc-for list="{{ passport }}" as="p" hint-placeholder-count="5">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:8px;border-bottom:1px solid rgba(13,27,46,0.06);"><span style="font-size:12px;color:#4c5a70;">{{ p.k }}</span><span style="font-size:12px;font-weight:600;color:#0a1424;font-variant-numeric:tabular-nums;">{{ p.v }}</span></div>
+              </sc-for>
+            </div>
+            <div style="display:inline-flex;align-items:center;gap:8px;margin-top:15px;padding:9px 13px;border:1px solid rgba(31,191,117,.35);border-radius:999px;background:rgba(31,191,117,.08);font-size:12px;font-weight:600;color:#12855a;"><i data-lucide="shield-check" style="width:15px;height:15px;"></i>Zincir eksiksiz · geri çağırmaya hazır</div>
+          </div>
+        </div>
+        <p style="margin-top:16px;font-size:11px;color:#55637a;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;">* Örnek yapı — demo veri. Kaydırdıkça zincir otomatik ilerler; bir düğüme tıklayarak da atlayabilirsiniz.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT MATTERS (editorial) -->
+  <section id="s-why" data-rail-sec="" data-screen-label="Neden önemli" style="position:relative;overflow:hidden;padding-block:96px;">
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;"><span data-par="0.14" style="position:absolute;left:-8%;top:0;width:46vw;height:46vw;border-radius:50%;background:radial-gradient(closest-side,rgba(23,148,184,0.1),transparent 70%);filter:blur(70px);"></span></div>
+    <div style="position:relative;z-index:1;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div class="reveal" style="max-width:60rem;margin-inline:auto;text-align:center;">
+        <p style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0f6f85;"><span style="width:22px;height:1px;background:#1794b8;"></span>NEDEN ÖNEMLİ</p>
+        <p style="margin-top:22px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-weight:500;font-size:clamp(26px,3.4vw,46px);line-height:1.18;color:#0a1424;">"İzlenebilirlik bir arşiv değildir; bir şikâyet geldiğinde <span style="display:inline-block;padding-bottom:.16em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;;line-height:1.14">ne kadar hızlı ve ne kadar dar</span> cevap verebildiğinizdir."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACKWARD RECALL -->
+  <section id="s-recall" data-rail-sec="" data-screen-label="Geri çağırma" style="position:relative;z-index:1;overflow:hidden;padding-block:88px;">
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;"><span data-par="0.12" style="position:absolute;right:-6%;top:-20%;width:48vw;height:48vw;border-radius:50%;background:conic-gradient(from 300deg,#1794b8,#0b5cff,#0b5cff,#1794b8);filter:blur(130px);opacity:.16;mix-blend-mode:multiply;animation:auroraDrift 34s ease-in-out infinite reverse;"></span></div>
+    <div style="position:relative;z-index:1;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div class="reveal" style="max-width:52rem;margin-bottom:34px;">
+        <p style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0f6f85;"><span style="width:22px;height:1px;background:#1794b8;"></span>ŞİKÂYET GELDİĞİNDE · GERİ İZLEME</p>
+        <h2 style="max-width:20ch;margin-top:16px;font-size:clamp(24px,3vw,40px);line-height:1.08;color:#0a1424;">Kök nedeni saatler değil, dakikalar içinde bulun.</h2>
+      </div>
+      <!-- backward flow strip -->
+      <div class="reveal" style="overflow-x:auto;padding-bottom:8px;margin-bottom:26px;">
+        <div style="display:flex;align-items:stretch;gap:10px;min-width:900px;">
+          <sc-for list="{{ backward }}" as="b" hint-placeholder-count="6">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div class="spot" style="position:relative;overflow:hidden;width:158px;padding:15px;border:1px solid {{ b.border }};border-radius:16px;background:{{ b.bg }};">
+                <span style="position:absolute;top:0;left:14px;right:14px;height:1px;background:linear-gradient(90deg,transparent,rgba(13,27,46,0.12),transparent);"></span>
+                <i data-lucide="{{ b.icon }}" style="width:19px;height:19px;color:{{ b.ic }};"></i>
+                <p style="margin-top:10px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#55637a;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;">{{ b.tag }}</p>
+                <p style="margin-top:3px;font-size:13px;font-weight:600;color:#0a1424;line-height:1.25;">{{ b.name }}</p>
+                <p style="margin-top:2px;font-size:11px;color:#4c5a70;font-variant-numeric:tabular-nums;">{{ b.meta }}</p>
+              </div>
+              <sc-if value="{{ b.arrow }}" hint-placeholder-val="{{ true }}"><i data-lucide="arrow-left" style="width:16px;height:16px;color:#0f6f85;flex:none;"></i></sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+        <sc-for list="{{ recall }}" as="r" hint-placeholder-count="4">
+          <div class="spot reveal" style="position:relative;overflow:hidden;padding:22px;border:1px solid rgba(11,92,255,.09);border-radius:20px;background:linear-gradient(158deg,#f5f8ff 0%,#e9f1ff 100%);"><span style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(13,27,46,0.12),transparent);"></span><div style="position:relative;z-index:1;"><sc-if value="{{ r.num }}" hint-placeholder-val="{{ true }}"><div data-count="{{ r.to }}" data-suffix="{{ r.suffix }}" data-prefix="{{ r.prefix }}" style="display:inline-block;padding-bottom:.16em;font-size:28px;font-weight:700;letter-spacing:-.02em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-variant-numeric:tabular-nums;;line-height:1.14">{{ r.prefix }}0{{ r.suffix }}</div></sc-if><sc-if value="{{ r.text }}" hint-placeholder-val="{{ false }}"><div style="display:inline-block;padding-bottom:.16em;font-size:20px;font-weight:700;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;;line-height:1.14">{{ r.v }}</div></sc-if><p style="margin-top:8px;font-size:13px;line-height:1.45;color:#4c5a70;">{{ r.k }}</p></div></div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ / objections -->
+  <section id="s-faq" data-rail-sec="" data-screen-label="Sorular" style="position:relative;overflow:hidden;padding-block:88px;">
+    <div style="position:relative;z-index:1;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div class="reveal" style="max-width:52rem;margin-bottom:34px;">
+        <p style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0847c4;"><span style="width:22px;height:1px;background:#0b5cff;"></span>TİPİK İTİRAZ → CEVAP</p>
+        <h2 style="margin-top:16px;font-size:clamp(24px,3vw,38px);line-height:1.1;color:#0a1424;">Sahadan gelen sorular.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <sc-for list="{{ faq }}" as="q" hint-placeholder-count="4">
+          <article class="spot reveal" style-hover="box-shadow:0 20px 46px -20px rgba(13,27,46,.28);border-color:rgba(11,92,255,.22);" style="position:relative;overflow:hidden;padding:24px;border-radius:20px;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+            <span style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(13,27,46,0.12),transparent);"></span>
+            <p style="position:relative;z-index:1;display:flex;align-items:flex-start;gap:10px;font-size:15px;font-weight:600;color:#0a1424;"><span style="color:#8a5a0f;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;">"</span>{{ q.q }}</p>
+            <p style="position:relative;z-index:1;margin-top:12px;padding-left:16px;border-left:2px solid #1794b8;font-size:14px;line-height:1.6;color:#4c5a70;">{{ q.a }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSITION -->
+  <section id="iletisim" data-rail-sec="" data-screen-label="Sonraki" style="position:relative;z-index:1;padding-block:40px 112px;">
+    <div style="max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <a href="kullanim-kalite.html" class="reveal spot" style="position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;overflow:hidden;padding:clamp(28px,4vw,44px);border-radius:20px;color:#0a1424;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+        <span style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#1794b8,#0b5cff,transparent 75%);"></span>
+        <div style="position:relative;z-index:1;">
+          <p style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#0f6f85;">SONRAKİ SENARYO · KALİTE</p>
+          <h2 style="max-width:24ch;margin-top:14px;font-size:clamp(24px,3vw,40px);line-height:1.12;">İzlenen her nokta, bir <span style="display:inline-block;padding-bottom:.16em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;;line-height:1.14">kalite kaydıdır.</span></h2>
+        </div>
+        <span style="position:relative;z-index:1;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;border:1px solid rgba(13,27,46,0.12);background:rgba(13,27,46,0.05);font-size:15px;font-weight:600;white-space:nowrap;">Kalite'ye geç<i data-lucide="arrow-right" style="width:18px;height:18px;"></i></span>
+      </a>
+      <p style="margin-top:32px;text-align:center;font-size:12px;color:#55637a;"><a href="kullanim-wms.html" style="color:#55637a;">← WMS</a> · <a href="index.html" style="color:#55637a;">Ana sayfa</a></p>
+    </div>
+  </section>
+
+  <footer style="position:relative;z-index:1;padding-block:88px 40px;border-top:1px solid rgba(13,27,46,.07);">
+    <div style="max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div style="display:grid;grid-template-columns:minmax(0,1.1fr) repeat(4,minmax(0,1fr));gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(13,27,46,.08);">
+        <div>
+          <a href="index.html" style="display:inline-flex;align-items:center;gap:11px;">
+            <img src="brand/logo/bss-logo-primary.svg" alt="BSS Technology" width="804" height="306" decoding="async" style="display:block;height:42px;width:auto;">
+          </a>
+          <p style="max-width:30ch;margin-top:18px;font-size:14px;line-height:1.6;color:#4c5a70;">Üretim bilgisini teknolojiye dönüştürüyoruz.</p>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">PLATFORM</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="platform-moduller.html" style="font-size:14px;color:#4c5a70;">Modüller</a></li>
+            <li><a href="platform-urun-agaci.html" style="font-size:14px;color:#4c5a70;">Ürün ağacı</a></li>
+            <li><a href="platform-maliyet.html" style="font-size:14px;color:#4c5a70;">Maliyet</a></li>
+            <li><a href="platform-otomasyon.html" style="font-size:14px;color:#4c5a70;">Otomasyon</a></li>
+            <li><a href="platform-mobil-barkod.html" style="font-size:14px;color:#4c5a70;">Mobil barkod</a></li>
+            <li><a href="platform-yonetici-dashboard.html" style="font-size:14px;color:#4c5a70;">Yönetici dashboard</a></li>
+            <li><a href="platform-olceklenebilirlik.html" style="font-size:14px;color:#4c5a70;">Ölçeklenebilirlik</a></li>
+            <li><a href="platform-guvenlik.html" style="font-size:14px;color:#4c5a70;">Güvenlik</a></li>
+            <li><a href="platform-gxp.html" style="font-size:14px;color:#4c5a70;">GxP</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">ÇÖZÜMLER</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="cozum-erp.html" style="font-size:14px;color:#4c5a70;">ERP</a></li>
+            <li><a href="cozum-mes.html" style="font-size:14px;color:#4c5a70;">MES</a></li>
+            <li><a href="cozum-mrp.html" style="font-size:14px;color:#4c5a70;">MRP</a></li>
+            <li><a href="cozum-otomasyon.html" style="font-size:14px;color:#4c5a70;">Otomasyon</a></li>
+            <li><a href="cozum-bulut-sunucu.html" style="font-size:14px;color:#4c5a70;">Bulut sunucu</a></li>
+            <li><a href="cozum-sektore-ozel.html" style="font-size:14px;color:#4c5a70;">Sektöre özel</a></li>
+            <li><a href="cozum-sektore-gore.html" style="font-size:14px;color:#4c5a70;">Sektöre göre</a></li>
+            <li><a href="cozum-yz-finansal-analiz.html" style="font-size:14px;color:#4c5a70;">YZ finansal analiz</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">KULLANIM</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="kullanim-uretim-planlama.html" style="font-size:14px;color:#4c5a70;">Üretim planlama</a></li>
+            <li><a href="#top" style="font-size:14px;color:#4c5a70;">İzlenebilirlik</a></li>
+            <li><a href="kullanim-kalite.html" style="font-size:14px;color:#4c5a70;">Kalite</a></li>
+            <li><a href="kullanim-wms.html" style="font-size:14px;color:#4c5a70;">WMS</a></li>
+            <li><a href="kullanim-scm.html" style="font-size:14px;color:#4c5a70;">SCM</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">ŞİRKET</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="sirket-hakkimizda.html" style="font-size:14px;color:#4c5a70;">Hakkımızda</a></li>
+            <li><a href="sirket-kaynaklar.html" style="font-size:14px;color:#4c5a70;">Kaynaklar</a></li>
+            <li><a href="sirket-iletisim.html" style="font-size:14px;color:#4c5a70;">İletişim</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:24px;">
+        <p style="font-size:12px;color:#55637a;">© 2026 BSS Technology · WinPremium</p>
+        <a href="sirket-iletisim.html" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;background:#0b5cff;color:#fff;font-size:14px;font-weight:600;">Demo Talep Edin</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+const CHAIN = [
+  { icon:"leaf", label:"Hammadde", code:"HM-001", title:"Hammadde girişi", body:"Tedarikçiden gelen kraft liner bobini lot numarasıyla kayda girer. Bu lot, üretildiği tüm partilere ileri izlenebilir; bir sorun çıkarsa aynı lottan üretilmiş her parti tek sorguda listelenir.",
+    fields:[{k:"Tedarikçi",v:"Akdeniz Kağıt"},{k:"Malzeme",v:"Kraft liner 90g"},{k:"Lot",v:"HM-2405-001"},{k:"Giriş",v:"14.05.2024"}] },
+  { icon:"flask-conical", label:"Parti / Lot", code:"P-001", title:"Üretim partisi açılır", body:"Hammadde bir üretim partisine bağlanır. Partinin tükettiği tüm girdiler ve ürettiği tüm mamuller bu numaraya iz bırakır; ileri ve geri izin kesişim noktasıdır.",
+    fields:[{k:"Parti",v:"P-2405-001"},{k:"Üretim",v:"15.05.2024"},{k:"Girdi lot",v:"HM-2405-001"},{k:"Miktar",v:"19.500 adet"}] },
+  { icon:"clipboard-list", label:"İş emri", code:"UE-015", title:"İş emri", body:"Parti bir iş emrine bağlanır; ürün ağacı, rota ve hedef bu kayda yazılır. Her operasyon iş emrine iz bırakır, böylece hangi reçeteyle üretildiği kesinleşir.",
+    fields:[{k:"İş emri",v:"UE-2405-015"},{k:"Ürün",v:"WP-500"},{k:"Hat",v:"Hat B"},{k:"Durum",v:"Tamam"}] },
+  { icon:"cog", label:"Operasyon", code:"OP 10-40", title:"Operasyonlar", body:"Baskı, laminasyon, kesim ve yapıştırma operasyonları sırayla kaydedilir. Her adımın makinesi, operatörü ve saati saklanır; bir kalite sorunu hangi istasyonda doğduysa oraya kadar inilebilir.",
+    fields:[{k:"Sıra",v:"10→20→30→40"},{k:"Operatör",v:"M. Demir"},{k:"Makine",v:"KBA 162"},{k:"Vardiya",v:"Gündüz"}] },
+  { icon:"shield-check", label:"Kalite", code:"QC-015", title:"Kalite kontrol", body:"Üretim sırasında ve sonunda kalite kontrol yapılır; sonuç partiye bağlanır. Uygunsuzluk olursa parti burada işaretlenir ve serbest bırakılmaz.",
+    fields:[{k:"Kontrol",v:"QC-2405-015"},{k:"Sonuç",v:"PASS"},{k:"Fire",v:"%3,1"},{k:"Kontrolör",v:"S. Kaya"}] },
+  { icon:"package", label:"Paketleme", code:"PK-001", title:"Paketleme", body:"Mamul paketlenip etiketlenir; her koli ve palet parti numarasıyla eşleşir. Seri numarası burada basılır — üründeki tek fiziksel iz noktası budur.",
+    fields:[{k:"Paket",v:"PK-2405-001"},{k:"Seri no",v:"SN-...0001"},{k:"Koli",v:"163 koli"},{k:"Palet",v:"12 palet"}] },
+  { icon:"warehouse", label:"Depo", code:"A-12-03", title:"Depo / Sevkiyat", body:"Palet depoda tanımlı göze girer, sevk emriyle çıkar. Hangi paletin hangi araca yüklendiği kayda geçer; sevkiyat sonrası bile ürünün konumu bilinir.",
+    fields:[{k:"Lokasyon",v:"A-12-03"},{k:"Stok",v:"150 adet"},{k:"Sevk emri",v:"SVK-...007"},{k:"Çıkış",v:"18.05.2024"}] },
+  { icon:"users", label:"Müşteri", code:"XYZ", title:"Müşteri teslimi", body:"Ürün müşteriye teslim edilir; teslim tarihi ve alıcı kayda bağlanır. Bir şikâyet gelirse zincir tam buradan geriye doğru, tedarikçi partisine kadar izlenir.",
+    fields:[{k:"Müşteri",v:"XYZ A.Ş."},{k:"Teslim",v:"19.05.2024"},{k:"Sevk no",v:"SVK-...007"},{k:"Durum",v:"Teslim edildi"}] },
+];
+
+const PASSPORT = [
+  { k:"Üretim tarihi", v:"17.05.2024" },
+  { k:"Son kullanım", v:"17.05.2026" },
+  { k:"İş emri", v:"UE-2405-015" },
+  { k:"Parti", v:"P-2405-001" },
+  { k:"Mevcut konum", v:"MERKEZ / A-12-03" },
+];
+
+const HERO_STATS = [
+  { to:8, prefix:"", suffix:"", label:"İz düğümü · uçtan uca" },
+  { to:100, prefix:"%", suffix:"", label:"Kayıt zinciri bütünlüğü" },
+  { to:5, prefix:"<", suffix:" dk", label:"Kök neden tespiti" },
+];
+
+const BACKWARD = [
+  { icon:"message-square-warning", tag:"BAŞLANGIÇ", name:"Müşteri şikâyeti", meta:"XYZ A.Ş. · 22.05", tone:"danger" },
+  { icon:"send", tag:"SEVK", name:"Sevk emri", meta:"SVK-2405-007", tone:"n" },
+  { icon:"package", tag:"PALET", name:"Palet / seri", meta:"SN-2405180001", tone:"n" },
+  { icon:"clock", tag:"VARDİYA", name:"Vardiya", meta:"15.05 · Gündüz", tone:"n" },
+  { icon:"user", tag:"OPERATÖR", name:"Operatör", meta:"M. Demir · KBA 162", tone:"n" },
+  { icon:"leaf", tag:"KAYNAK", name:"Tedarikçi partisi", meta:"HM-2405-001", tone:"target" },
+];
+
+const RECALL = [
+  { num:true, to:5, prefix:"<", suffix:" dk", k:"Etkilenen parti tespiti — seri numarasından" },
+  { text:true, v:"Tek sorgu", k:"Bobin → vardiya → tedarikçi geri izleme" },
+  { num:true, to:100, prefix:"%", suffix:"", k:"Kayıt zinciri bütünlüğü" },
+  { text:true, v:"Dar kapsam", k:"Yalnız etkilenen parti, geniş geri çağırma değil" },
+];
+
+const FAQ = [
+  { q:"Sahadaki operatör ekstra veri girmek zorunda mı?", a:"Hayır. İz, zaten yapılan işlemlerden doğar — barkod okutma, iş emri kapatma, kalite onayı. Ayrı bir kayıt adımı eklenmez; mevcut akış kaydın kendisidir." },
+  { q:"Tedarikçiden gelen lotu biz mi girmeliyiz?", a:"Mal kabulde bobin/palet barkodu okutulduğunda tedarikçi lotu kayda girer. Tedarikçi etiketi standart değilse giriş anında bir kez tanımlanır, sonrası otomatiktir." },
+  { q:"Geriye izleme gerçekten tek sorgu mu?", a:"Evet. Seri numarası veya parti numarası tüm zinciri tek anahtarla açar; ara tabloları elle birleştirmezsiniz. Sonuç filtrelenip denetime dışa aktarılabilir." },
+  { q:"Eski partiler için de çalışır mı?", a:"Sistem devreye girdiği andan itibaren üretilen her parti tam ize sahiptir. Geçmiş partiler, o dönem tutulan veriye göre kısmi izlenebilir; kapsam projede netleştirilir." },
+];
+
+class Component extends DCLogic {
+  state = { node:0, dir:"fwd" };
+  componentDidMount(){ document.documentElement.lang="tr"; this.icons(); this.startMotion(); this._safety=setTimeout(()=>document.querySelectorAll(".reveal,.lmask").forEach(e=>e.classList.add("in")),1500); }
+  componentDidUpdate(){ this.icons(); }
+  componentWillUnmount(){ if(this.rFrame) cancelAnimationFrame(this.rFrame); if(this.mFrame) cancelAnimationFrame(this.mFrame); if(this.io) this.io.disconnect(); if(this._safety) clearTimeout(this._safety); }
+  icons(){ if(window.lucide&&window.lucide.createIcons){ try{ window.lucide.createIcons(); }catch(e){} } }
+
+  startMotion(){
+    const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+    const reduce=window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+    // reveals via IO
+    let pendingRev=[...document.querySelectorAll(".reveal,.lmask")];
+    const showRev=(el)=>el.classList.add("in");
+    const revTick=()=>{
+      if(pendingRev.length){ const line=window.innerHeight*0.92; const next=[];
+        for(const el of pendingRev){ if(el.getBoundingClientRect().top<line) showRev(el); else next.push(el); }
+        pendingRev=next; }
+      this.rFrame=requestAnimationFrame(revTick);
+    };
+    this.rFrame=requestAnimationFrame(revTick);
+    // count-up
+    this.countIo=new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ this.countUp(e.target); this.countIo.unobserve(e.target); } }); },{threshold:0.25});
+    document.querySelectorAll("[data-count]").forEach(el=>{ const r=el.getBoundingClientRect(); if(r.top<window.innerHeight&&r.bottom>0){ this.countUp(el); } else { this.countIo.observe(el); } });
+    // spotlight cards
+    document.querySelectorAll(".spot").forEach(el=>{ el.addEventListener("pointermove",(ev)=>{ const r=el.getBoundingClientRect(); el.style.setProperty("--mx",(ev.clientX-r.left)+"px"); el.style.setProperty("--my",(ev.clientY-r.top)+"px"); }); });
+
+    const track=document.querySelector("[data-scrub-track]");
+    const stage=document.querySelector("[data-scrub-stage]");
+    const fill=document.querySelector("[data-chain-fill]");
+    const pkt=document.querySelector("[data-chain-pkt]");
+    const railFill=document.querySelector("[data-rail-fill]");
+    const railDots=[...document.querySelectorAll("[data-rail-dot]")];
+    const secs=[...document.querySelectorAll("[data-rail-sec]")];
+    const pars=[...document.querySelectorAll("[data-par]")];
+    const N=CHAIN.length;
+    if(track){ track.style.height=(N*62)+"vh"; }
+
+    const loop=()=>{
+      const vh=window.innerHeight, doc=document.documentElement;
+      const scrollY=window.pageYOffset||doc.scrollTop;
+      // rail fill = page progress
+      if(railFill){ const p=clamp(scrollY/((doc.scrollHeight-vh)||1),0,1); railFill.style.height=(p*100)+"%"; }
+      // active section dot
+      let act=0; secs.forEach((s,i)=>{ const r=s.getBoundingClientRect(); if(r.top<=vh*0.5) act=i; });
+      railDots.forEach((d,i)=>{ const on=i===act; d.style.background=on?"#0f6f85":"#ffffff"; d.style.borderColor=on?"#0f6f85":"#e9ecf2"; d.style.boxShadow=on?"0 0 10px rgba(23,148,184,0.14)":"none"; d.style.transform=on?"scale(1.25)":"scale(1)"; });
+      // parallax
+      pars.forEach(p=>{ const sp=parseFloat(p.getAttribute("data-par"))||0.1; const r=p.parentElement.getBoundingClientRect(); const off=(r.top+r.height/2-vh/2)*-sp; p.style.transform=(p.style.transform.includes("translateX")?"translateX(-50%) ":"")+`translateY(${off.toFixed(1)}px)`; });
+      // scrub chain
+      if(track&&stage&&!reduce){
+        const r=track.getBoundingClientRect();
+        const total=Math.max(1,track.offsetHeight-vh);
+        const prog=clamp(-r.top/total,0,1);
+        const fpos=prog*(N-1);
+        const idx=clamp(Math.round(fpos),0,N-1);
+        if(idx!==this.state.node) this.setState({node:idx});
+        const pct=prog*96; // matches left:2% right:2%
+        if(fill){ fill.style.width=(pct*0.96)+"%"; }
+        if(pkt){ pkt.style.left=(2+prog*96)+"%"; pkt.style.opacity=prog>0.01&&prog<0.99?1:0; }
+      }
+      this.mFrame=requestAnimationFrame(loop);
+    };
+    this.mFrame=requestAnimationFrame(loop);
+  }
+
+  countUp(el){
+    const to=parseFloat(el.getAttribute("data-count"))||0;
+    const pre=el.getAttribute("data-prefix")||"", suf=el.getAttribute("data-suffix")||"";
+    const dur=900, t0=performance.now();
+    const ease=(x)=>1-Math.pow(1-x,3);
+    const step=(now)=>{ const p=Math.min(1,(now-t0)/dur); const v=Math.round(to*ease(p)); el.textContent=pre+v+suf; if(p<1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }
+
+  renderVals(){
+    const { node, dir } = this.state;
+    const c=CHAIN[node];
+    const fwd=dir==="fwd";
+    return {
+      rail: ["Giriş","Zincir","Neden","Geri izleme","Sorular"].map((label,i)=>({ i, label, href:["#s-hero","#s-chain","#s-why","#s-recall","#s-faq"][i] })),
+      heroStats: HERO_STATS,
+      setForward:()=>this.setState({dir:"fwd"}), setBackward:()=>this.setState({dir:"bwd"}),
+      fwdBg: fwd?"rgba(11,92,255,0.14)":"transparent", fwdColor: fwd?"#fff":"#4c5a70",
+      bwdBg: !fwd?"rgba(23,148,184,0.14)":"transparent", bwdColor: !fwd?"#ffffff":"#4c5a70",
+      chain: CHAIN.map((x,i)=>{ const on=i===node; const passed = fwd ? i<node : i>node;
+        return { icon:x.icon, label:x.label, code:x.code,
+          border:on?(fwd?"rgba(23,148,184,0.14)":"rgba(23,148,184,0.14)"):(passed?"rgba(11,92,255,0.16)":"rgba(13,27,46,0.1)"),
+          bg:on?"rgba(23,148,184,0.14)":(passed?"rgba(11,92,255,0.1)":"rgba(255,255,255,0.7)"),
+          color:on?"#0f6f85":(passed?"#0b5cff":"#4c5a70"),
+          labelColor:on?"#0a1424":"#4c5a70",
+          glow:on?"0 0 26px rgba(23,148,184,0.14)":"none",
+          scale:on?"scale(1.12)":"scale(1)",
+          select:()=>this.setState({node:i}) }; }),
+      nodeIcons: CHAIN.map((x,i)=>({ slug:x.icon, op:i===node?"1":"0" })),
+      activeNum:node+1, activeCode:c.code, activeTitle:c.title, activeBody:c.body, activeFields:c.fields,
+      passport:PASSPORT,
+      backward: BACKWARD.map((b,i)=>{ const tone=b.tone; 
+        const m = tone==="danger"?{border:"rgba(255,77,94,.4)",bg:"rgba(255,77,94,.07)",ic:"#d11a2b"}
+                : tone==="target"?{border:"rgba(23,148,184,0.14)",bg:"rgba(23,148,184,0.07)",ic:"#0f6f85"}
+                : {border:"rgba(13,27,46,0.08)",bg:"rgba(255,255,255,0.72)",ic:"#0b5cff"};
+        return { ...b, ...m, arrow:i<BACKWARD.length-1 }; }),
+      recall: RECALL,
+      faq: FAQ,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

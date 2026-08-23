@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300..800;1,300..800&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+/* bssweb type stack — Google Fonts stand-ins. See readme.md > Typography for the
+   substitution note. Archivo carries display + UI, Instrument Serif is the editorial
+   accent, IBM Plex Mono is data / labels / code. */
+:root {
+  --font-display: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Instrument Serif", "Times New Roman", Times, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}

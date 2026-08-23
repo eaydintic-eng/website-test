@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Ürün Ağacı Oluşturma — BSS Platform</title>
+<meta name="description" content="Bitmiş ürünü tanımlarsınız; sistem bileşenleri, işlem sırasını ve uygun makine alternatiflerini birlikte çözümler. Planlamacı saatlerce uğraşmaz — maliyet," />
+<meta property="og:title" content="Ürün Ağacı Oluşturma — BSS Platform" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#dfeeff" />
+<link rel="icon" type="image/svg+xml" href="brand/logo/bss-mark-primary.svg" />
+
+<link rel="stylesheet" href="_ds/bssweb-design-system-e840475c-38e0-46cf-80fb-1224d8960e0b/tokens/fonts.css" />
+<link rel="stylesheet" href="_ds/bssweb-design-system-e840475c-38e0-46cf-80fb-1224d8960e0b/tokens/colors.css" />
+<link rel="stylesheet" href="_ds/bssweb-design-system-e840475c-38e0-46cf-80fb-1224d8960e0b/tokens/gradients.css" />
+<link rel="stylesheet" href="_ds/bssweb-design-system-e840475c-38e0-46cf-80fb-1224d8960e0b/tokens/motion.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.min.js" defer></script>
+<style>
+  @keyframes rowScan{0%{background-position:-40% 0}100%{background-position:140% 0}}
+</style>
+<script src="reveal-boot.js"></script>
+<script src="mobile-layer.js"></script>
+<link rel="stylesheet" href="bss.css">
+</helmet>
+
+<div style="position:relative;isolation:isolate;background:#dfeeff;">
+  <div aria-hidden="true" data-page-bg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;background-image:linear-gradient(168deg,rgba(11,92,255,.26) 0%,rgba(56,132,255,.12) 22%,rgba(255,255,255,0.1) 44%,rgba(23,148,184,.13) 68%,rgba(11,92,255,.28) 100%),url('brand/backgrounds/page-flow-light.webp');background-repeat:no-repeat;background-position:top center;background-size:100% 100%;"></div>
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:100;padding-top:14px;pointer-events:none;">
+    <div style="width:100%;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div style="pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;height:58px;padding:0 12px 0 18px;border:1px solid rgba(13,27,46,0.1);border-radius:999px;background:rgba(255,255,255,0.62);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px) saturate(150%);box-shadow:0 12px 40px rgba(13,27,46,0.1),inset 0 1px 0 rgba(13,27,46,0.06);">
+        <a href="index.html" style="display:inline-flex;align-items:center;gap:11px;">
+          <img src="brand/logo/bss-logo-primary.svg" alt="BSS Technology" width="804" height="306" decoding="async" style="display:block;height:42px;width:auto;">
+        </a>
+        <span style="display:flex;align-items:center;gap:9px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#55637a;">
+          <a href="index.html" style="color:#55637a;">PLATFORM</a><span style="opacity:.5;">/</span><span style="color:#0a1424;">ÜRÜN AĞACI</span>
+        </span>
+        <a href="#iletisim" style="display:inline-flex;align-items:center;height:38px;padding:0 18px;border-radius:999px;background:linear-gradient(180deg,#0b5cff,#0b5cff);color:#fff;font-size:14px;font-weight:600;white-space:nowrap;box-shadow:0 0 24px rgba(11,92,255,0.14),inset 0 1px 0 rgba(13,27,46,0.12);">Demo Talep Edin</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section data-screen-label="Ürün ağacı hero" style="position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:128px 0 56px;">
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;"><img fetchpriority="high" decoding="async" src="brand/backgrounds/architecture-blocks.webp" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center;" /><span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.5) 38%,rgba(255,255,255,0.12) 62%,rgba(255,255,255,0) 100%),linear-gradient(180deg,rgba(255,255,255,0.14) 0%,rgba(255,255,255,0.34) 44%,rgba(255,255,255,0.5) 78%,rgba(255,255,255,.42) 97%);"></span><span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.22) 52%,rgba(255,255,255,.22) 94%);"></span></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(80% 60% at 25% 0%,rgba(11,92,255,0.14),transparent 55%),radial-gradient(70% 70% at 100% 100%,rgba(23,148,184,0.14),transparent 60%),linear-gradient(160deg,rgba(255,255,255,.42),rgba(255,255,255,.42) 62%);"></div>
+    <div style="position:relative;z-index:1;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <p style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0847c4;"><span style="width:22px;height:1px;background:#0b5cff;"></span>GELİŞMİŞ YETENEKLER · 06 — ÜRÜN AĞACI OLUŞTURMA</p>
+      <h1 style="max-width:22ch;margin-top:16px;font-size:clamp(30px,4.4vw,58px);line-height:1.12;color:#0a1424;">Ürünü tanımlayın; ağacı ve parkuru <span style="display:inline-block;padding-bottom:.16em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;;line-height:1.14">sistem kendisi kursun.</span></h1>
+      <p style="max-width:58ch;margin-top:16px;color:#4c5a70;font-size:clamp(15px,1.1vw,18px);line-height:1.6;">Bitmiş ürünü tanımlarsınız; sistem bileşenleri, işlem sırasını ve uygun makine alternatiflerini birlikte çözümler. Planlamacı saatlerce uğraşmaz — maliyet, süre ve kapasite iş başlamadan görünür.</p>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE BOM + AI ROUTE -->
+  <section data-screen-label="Ürün ağacı panel" data-bom style="position:relative;overflow:hidden;padding-block:40px 96px;">
+    <span aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(60% 60% at 85% 0%,rgba(11,92,255,0.14),transparent 58%);"></span>
+    <div style="position:relative;z-index:1;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div class="reveal" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px;">
+        <span style="display:inline-flex;align-items:center;gap:10px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:{{ statusColor }};"><i style="width:8px;height:8px;border-radius:50%;background:{{ statusDot }};box-shadow:0 0 10px {{ statusDot }};{{ statusPulse }}"></i>{{ statusText }}</span>
+        <button type="button" onClick="{{ runBom }}" style="display:inline-flex;align-items:center;gap:9px;height:42px;padding:0 20px;border:0;border-radius:999px;background:linear-gradient(180deg,#0b5cff,#0b5cff);color:#fff;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 0 26px rgba(11,92,255,0.14),inset 0 1px 0 rgba(13,27,46,0.12);"><i data-lucide="{{ runIcon }}" style="width:16px;height:16px;"></i>{{ runLabel }}</button>
+      </div>
+
+      <div class="reveal" style="display:grid;grid-template-columns:1.55fr 1fr;gap:16px;align-items:start;">
+        <!-- BOM tree -->
+        <div style="position:relative;overflow:hidden;border-radius:16px;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+          <span style="position:absolute;top:0;left:20px;right:20px;height:1px;background:linear-gradient(90deg,transparent,rgba(13,27,46,0.12),transparent);z-index:2;"></span>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 18px;border-bottom:1px solid rgba(13,27,46,0.07);background:#ffffff;">
+            <span style="display:inline-flex;align-items:center;padding:5px 10px;border:1px solid rgba(11,92,255,0.16);border-radius:12px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.08em;color:#0847c4;">ÜRÜN AĞACI</span>
+            <span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:15px;font-weight:600;color:#0a1424;">Karton Kutu 20×20×5</span>
+            <span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;color:#55637a;">Bristol 230 g · 900×1030 · 39.000 adet</span>
+          </div>
+          <div style="padding:10px;display:flex;flex-direction:column;gap:6px;">
+            <sc-for list="{{ rows }}" as="r" hint-placeholder-count="8">
+              <div style="border:1px solid {{ r.border }};border-radius:12px;background:{{ r.bg }};overflow:hidden;transition:all .4s cubic-bezier(.16,1,.3,1);">
+                <div style="display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:12px;padding:12px 14px;">
+                  <span style="display:grid;place-items:center;width:30px;height:30px;border:1px solid rgba(11,92,255,0.16);border-radius:12px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:12px;color:#0847c4;">{{ r.num }}</span>
+                  <span style="display:flex;align-items:center;gap:10px;min-width:0;flex-wrap:wrap;">
+                    <span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:14px;font-weight:600;letter-spacing:.01em;color:#0a1424;">{{ r.name }}</span>
+                    <span style="display:inline-flex;align-items:center;padding:3px 8px;border:1px solid rgba(13,27,46,0.12);border-radius:999px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;color:#4c5a70;">{{ r.seq }}</span>
+                  </span>
+                  <span style="display:flex;align-items:center;gap:12px;">
+                    <sc-if value="{{ r.machineOn }}" hint-placeholder-val="{{ false }}"><span style="display:inline-flex;align-items:center;gap:6px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;color:#0f6f85;"><i data-lucide="settings-2" style="width:13px;height:13px;"></i>{{ r.machine }}</span></sc-if>
+                    <span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;color:#55637a;white-space:nowrap;">{{ r.compNote }}</span>
+                  </span>
+                </div>
+                <sc-if value="{{ r.expanded }}" hint-placeholder-val="{{ true }}">
+                  <div style="padding:0 14px 12px 60px;display:flex;flex-direction:column;gap:2px;">
+                    <sc-for list="{{ components }}" as="c" hint-placeholder-count="6">
+                      <div style="display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:8px 0;border-top:1px solid rgba(13,27,46,0.05);">
+                        <span style="display:inline-flex;align-items:center;justify-content:center;min-width:78px;padding:4px 8px;border-radius:12px;background:{{ c.tagBg }};font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.06em;color:{{ c.tagColor }};">{{ c.tag }}</span>
+                        <span style="font-size:13px;color:#4c5a70;">{{ c.name }}</span>
+                        <span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:13px;color:#0a1424;">{{ c.qty }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- AI route alternatives -->
+        <div style="position:relative;overflow:hidden;border-radius:16px;padding:18px;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+          <span style="position:absolute;top:0;left:20px;right:20px;height:1px;background:linear-gradient(90deg,transparent,rgba(23,148,184,0.14),transparent);"></span>
+          <p style="display:flex;align-items:center;gap:8px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:14px;font-weight:600;color:#0a1424;"><i data-lucide="sparkles" style="width:16px;height:16px;color:#0f6f85;"></i>Makine Parkuru Alternatifleri <span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-weight:500;color:#0f6f85;font-size:13px;">— yapay zekâ değerlendirir</span></p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:14px;">
+            <sc-for list="{{ alts }}" as="a" hint-placeholder-count="3">
+              <div style="position:relative;padding:14px;border:1px solid {{ a.border }};border-radius:12px;background:{{ a.bg }};transition:all .4s cubic-bezier(.16,1,.3,1);opacity:{{ a.opacity }};">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                  <span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:14px;font-weight:600;color:{{ a.titleColor }};">{{ a.title }}</span>
+                  <sc-if value="{{ a.best }}" hint-placeholder-val="{{ false }}"><span style="display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;background:rgba(23,148,184,0.14);border:1px solid rgba(23,148,184,0.14);font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.06em;color:#0f6f85;">EN UYGUN</span></sc-if>
+                  <sc-if value="{{ a.metricsOn }}" hint-placeholder-val="{{ true }}"><span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;color:#0f6f85;">{{ a.metrics }}</span></sc-if>
+                </div>
+                <p style="margin-top:6px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;line-height:1.5;color:#4c5a70;">{{ a.route }}</p>
+              </div>
+            </sc-for>
+          </div>
+          <!-- result KPIs -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;">
+            <sc-for list="{{ resultKpis }}" as="k" hint-placeholder-count="3">
+              <div style="padding:14px 10px;border:1px solid {{ k.border }};border-radius:12px;background:{{ k.bg }};text-align:center;transition:all .5s cubic-bezier(.16,1,.3,1);">
+                <div style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:clamp(15px,1.5vw,19px);font-weight:700;letter-spacing:-.01em;color:{{ k.valColor }};">{{ k.val }}</div>
+                <div style="margin-top:3px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.06em;color:#55637a;">{{ k.label }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <p style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(13,27,46,0.07);font-size:12px;line-height:1.55;color:#4c5a70;">Sonuç: Sistem ürünü tanır, bileşenleri ve işlem zincirini çözümleyip en az maliyet + en kısa süreli parkuru kurar; maliyet ve süreyi iş başlamadan söyler.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-step explainer -->
+  <section data-screen-label="Nasıl" style="position:relative;z-index:1;overflow:hidden;padding-block:40px 96px;">
+    <div style="position:relative;z-index:1;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+          <article class="reveal" style-hover="box-shadow:0 20px 46px -20px rgba(13,27,46,.28);border-color:rgba(11,92,255,.22);" style="position:relative;overflow:hidden;padding:24px;border-radius:20px;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+            <span style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(13,27,46,0.12),transparent);"></span>
+            <div style="display:flex;align-items:center;justify-content:space-between;"><span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;border:1px solid rgba(11,92,255,0.16);background:rgba(11,92,255,0.12);color:#0b5cff;"><i data-lucide="{{ s.icon }}" style="width:21px;height:21px;"></i></span><span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;color:#55637a;">{{ s.num }}</span></div>
+            <h3 style="margin-top:16px;font-size:16px;font-weight:600;color:#0a1424;">{{ s.title }}</h3>
+            <p style="margin-top:7px;font-size:13px;line-height:1.55;color:#4c5a70;">{{ s.desc }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSITION -->
+  <section id="iletisim" data-screen-label="Sonraki" style="position:relative;z-index:1;padding-block:20px 112px;">
+    <div style="max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <a href="platform-maliyet.html" class="reveal" style="position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;overflow:hidden;padding:clamp(28px,4vw,44px);border-radius:20px;color:#0a1424;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+        <span style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#1794b8,#0b5cff,transparent 75%);"></span>
+        <div style="position:relative;">
+          <p style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#0f6f85;">SONRAKİ · 07 — GERÇEKLEŞEN & ÖNGÖRÜLEN MALİYET</p>
+          <h2 style="max-width:24ch;margin-top:14px;font-size:clamp(24px,3vw,40px);line-height:1.12;">Bir ürün yapısı, sonunda bir <span style="display:inline-block;padding-bottom:.16em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;;line-height:1.14">maliyet yapısına dönüşür.</span></h2>
+        </div>
+        <span style="position:relative;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;border:1px solid rgba(13,27,46,0.12);background:rgba(13,27,46,0.05);font-size:15px;font-weight:600;white-space:nowrap;">Devam edin<i data-lucide="arrow-right" style="width:18px;height:18px;"></i></span>
+      </a>
+      <p style="margin-top:32px;text-align:center;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:12px;color:#55637a;"><a href="platform-guvenlik.html" style="color:#55637a;">← 05 Güvenlik</a> · <a href="index.html" style="color:#55637a;">Ana sayfa</a></p>
+    </div>
+  </section>
+
+  <footer style="position:relative;z-index:1;padding-block:88px 40px;border-top:1px solid rgba(13,27,46,.07);">
+    <div style="max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div style="display:grid;grid-template-columns:minmax(0,1.1fr) repeat(4,minmax(0,1fr));gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(13,27,46,.08);">
+        <div>
+          <a href="index.html" style="display:inline-flex;align-items:center;gap:11px;">
+            <img src="brand/logo/bss-logo-primary.svg" alt="BSS Technology" width="804" height="306" decoding="async" style="display:block;height:42px;width:auto;">
+          </a>
+          <p style="max-width:30ch;margin-top:18px;font-size:14px;line-height:1.6;color:#4c5a70;">Üretim bilgisini teknolojiye dönüştürüyoruz.</p>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">PLATFORM</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="platform-moduller.html" style="font-size:14px;color:#4c5a70;">Modüller</a></li>
+            <li><a href="#top" style="font-size:14px;color:#4c5a70;">Ürün ağacı</a></li>
+            <li><a href="platform-maliyet.html" style="font-size:14px;color:#4c5a70;">Maliyet</a></li>
+            <li><a href="platform-otomasyon.html" style="font-size:14px;color:#4c5a70;">Otomasyon</a></li>
+            <li><a href="platform-mobil-barkod.html" style="font-size:14px;color:#4c5a70;">Mobil barkod</a></li>
+            <li><a href="platform-yonetici-dashboard.html" style="font-size:14px;color:#4c5a70;">Yönetici dashboard</a></li>
+            <li><a href="platform-olceklenebilirlik.html" style="font-size:14px;color:#4c5a70;">Ölçeklenebilirlik</a></li>
+            <li><a href="platform-guvenlik.html" style="font-size:14px;color:#4c5a70;">Güvenlik</a></li>
+            <li><a href="platform-gxp.html" style="font-size:14px;color:#4c5a70;">GxP</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">ÇÖZÜMLER</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="cozum-erp.html" style="font-size:14px;color:#4c5a70;">ERP</a></li>
+            <li><a href="cozum-mes.html" style="font-size:14px;color:#4c5a70;">MES</a></li>
+            <li><a href="cozum-mrp.html" style="font-size:14px;color:#4c5a70;">MRP</a></li>
+            <li><a href="cozum-otomasyon.html" style="font-size:14px;color:#4c5a70;">Otomasyon</a></li>
+            <li><a href="cozum-bulut-sunucu.html" style="font-size:14px;color:#4c5a70;">Bulut sunucu</a></li>
+            <li><a href="cozum-sektore-ozel.html" style="font-size:14px;color:#4c5a70;">Sektöre özel</a></li>
+            <li><a href="cozum-sektore-gore.html" style="font-size:14px;color:#4c5a70;">Sektöre göre</a></li>
+            <li><a href="cozum-yz-finansal-analiz.html" style="font-size:14px;color:#4c5a70;">YZ finansal analiz</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">KULLANIM</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="kullanim-uretim-planlama.html" style="font-size:14px;color:#4c5a70;">Üretim planlama</a></li>
+            <li><a href="kullanim-izlenebilirlik.html" style="font-size:14px;color:#4c5a70;">İzlenebilirlik</a></li>
+            <li><a href="kullanim-kalite.html" style="font-size:14px;color:#4c5a70;">Kalite</a></li>
+            <li><a href="kullanim-wms.html" style="font-size:14px;color:#4c5a70;">WMS</a></li>
+            <li><a href="kullanim-scm.html" style="font-size:14px;color:#4c5a70;">SCM</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">ŞİRKET</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="sirket-hakkimizda.html" style="font-size:14px;color:#4c5a70;">Hakkımızda</a></li>
+            <li><a href="sirket-kaynaklar.html" style="font-size:14px;color:#4c5a70;">Kaynaklar</a></li>
+            <li><a href="sirket-iletisim.html" style="font-size:14px;color:#4c5a70;">İletişim</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:24px;">
+        <p style="font-size:12px;color:#55637a;">© 2026 BSS Technology · WinPremium</p>
+        <a href="sirket-iletisim.html" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;background:#0b5cff;color:#fff;font-size:14px;font-weight:600;">Demo Talep Edin</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+const ROWS = [
+  { num:"10", name:"OFSET BASKI", seq:"Sıra 1 · Hat 1", comps:"6 bileşen", machine:"KBA 162 5C+LAK", expandable:true },
+  { num:"20", name:"LAK KORUMASI", seq:"Sıra 2 · Hat 1", comps:"3 bileşen", machine:"KBA 162 5C+LAK" },
+  { num:"30", name:"SIVAMA", seq:"Sıra 3 · Hat 2", comps:"3 bileşen", machine:"SIVAMA-L6 165×100" },
+  { num:"40", name:"ÖZEL KESİM", seq:"Sıra 4 · Hat 3", comps:"2 bileşen", machine:"YONGCH 120×160" },
+  { num:"50", name:"AYIKLAMA", seq:"Sıra 5 · Hat 3", comps:"1 bileşen", machine:"YONGCH 120×160" },
+  { num:"60", name:"BİRLEŞTİRME", seq:"Sıra 6 · Hat 4", comps:"2 bileşen", machine:"OMEGA ALLPRO 165 CM" },
+  { num:"70", name:"MAMÜL DEPO ÖN HAZIRLIK", seq:"Sıra 7 · Hat 4", comps:"2 bileşen", machine:"OMEGA ALLPRO 165 CM" },
+  { num:"80", name:"PALET BAĞLAMA", seq:"Sıra 8 · Hat 4", comps:"5 bileşen", machine:"OMEGA ALLPRO 165 CM" },
+];
+const COMPONENTS = [
+  { tag:"MAKİNE", name:"KBA 162 5C+LAK", qty:"1,0000", tagColor:"#0b5cff", tagBg:"rgba(11,92,255,0.14)" },
+  { tag:"HAMMADDE", name:"VARN OFSET YIKAMA MADDESİ", qty:"6,0000", tagColor:"#0f6f85", tagBg:"rgba(23,148,184,0.12)" },
+  { tag:"YARDIMCI", name:"162 CTP BASKI KALIBI", qty:"5,0000", tagColor:"#0b5cff", tagBg:"rgba(11,92,255,0.12)" },
+  { tag:"HAMMADDE", name:"PANTONE 710", qty:"0,2781", tagColor:"#0f6f85", tagBg:"rgba(23,148,184,0.12)" },
+  { tag:"HAMMADDE", name:"CMYK — Cyan · Magenta · Yellow · Key", qty:"4 × 0,2781", tagColor:"#0f6f85", tagBg:"rgba(23,148,184,0.12)" },
+  { tag:"YARIMAMUL", name:"BRİSTOL 230 g · 900×1030", qty:"1,0000", tagColor:"#8a5a0f", tagBg:"rgba(255,176,32,.12)" },
+];
+const ALTS = [
+  { title:"Alternatif 1", route:"KBA 162.5C+LAK → Sıvama-L6 165×100 → Yongch 120×160 → Omega Allpro 165", metrics:"4 sa 20 dk · €0,52 · %92", best:true },
+  { title:"Alternatif 2", route:"KBA 105 6C+2LAK → Sıvama-L5 165×160 → Yoco 120×165 → Leyla ve Ekibi", metrics:"4 sa 55 dk · €0,57 · %88", best:false },
+  { title:"Alternatif 3", route:"KBA 105 6C+2LAK → Sıvama-L6 165×100 → Eterna 130×210 → Leyla ve Ekibi", metrics:"5 sa 30 dk · €0,61 · %84", best:false },
+];
+const KPIS = [ { label:"tahmini süre", val:"4 sa 20 dk" }, { label:"birim maliyet", val:"€0,52/adet" }, { label:"kapasite", val:"%92" } ];
+const STEPS = [
+  { num:"01", icon:"package", title:"Ürünü tanımlayın", desc:"Bitmiş ürünü, ölçüsünü ve malzemesini girersiniz — Karton Kutu 20×20×5, Bristol 230 g." },
+  { num:"02", icon:"git-branch", title:"Sistem ağacı kurar", desc:"Bileşenler, yarı mamuller ve işlem sırası (baskı → lak → sıvama → kesim → palet) otomatik çözümlenir." },
+  { num:"03", icon:"sparkles", title:"AI parkuru seçer", desc:"Makine alternatifleri değerlendirilir; en az maliyet ve en kısa süreli parkur önerilir." },
+];
+
+class Component extends DCLogic {
+  state = { phase:0 }; // 0 idle, 1 solving, 2 resolved
+  componentDidMount(){ document.documentElement.lang="tr"; this.icons(); this.revealFallback(); this.autoStart(); }
+  componentDidUpdate(){ this.icons(); }
+  componentWillUnmount(){ if(this.io) this.io.disconnect(); if(this.startIo) this.startIo.disconnect(); this.clearTimers(); }
+  icons(){ if(window.lucide&&window.lucide.createIcons){ try{ window.lucide.createIcons(); }catch(e){} } }
+  clearTimers(){ (this.timers||[]).forEach(t=>clearTimeout(t)); this.timers=[]; }
+  revealFallback(){
+    if(!("IntersectionObserver" in window)){ document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in")); return; }
+    this.io=new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); this.io.unobserve(e.target); } }); },{threshold:0.12});
+    document.querySelectorAll(".reveal").forEach(el=>this.io.observe(el));
+  }
+  autoStart(){
+    const el=document.querySelector("[data-bom]"); if(!el) { this.run(); return; }
+    if(!("IntersectionObserver" in window)){ this.run(); return; }
+    this.startIo=new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting && this.state.phase===0){ this.run(); this.startIo.disconnect(); } }); },{threshold:0.3});
+    this.startIo.observe(el);
+  }
+  run(){
+    this.clearTimers();
+    this.setState({phase:1});
+    this.timers=[ setTimeout(()=>this.setState({phase:2}), 1900) ];
+  }
+  renderVals(){
+    const p=this.state.phase;
+    const solving=p===1, resolved=p===2;
+    const rows=ROWS.map((r,i)=>({
+      num:r.num, name:r.name, seq:r.seq, machine:r.machine,
+      machineOn: resolved,
+      compNote: r.comps + (solving && i===0 ? " · çözümleniyor…" : ""),
+      expanded: r.expandable===true,
+      border: (resolved && i===0) ? "rgba(23,148,184,0.14)" : "rgba(13,27,46,0.07)",
+      bg: (resolved && i===0) ? "rgba(23,148,184,0.05)" : (i===0 ? "#ffffff" : "#ffffff"),
+    }));
+    const alts=ALTS.map((a)=>({
+      title:a.title, route:a.route, metrics:a.metrics,
+      best: resolved && a.best, metricsOn:true,
+      opacity: solving ? 0.6 : 1,
+      border: (resolved && a.best) ? "rgba(23,148,184,0.14)" : "rgba(13,27,46,0.08)",
+      bg: (resolved && a.best) ? "rgba(23,148,184,0.06)" : "#ffffff",
+      titleColor: (resolved && a.best) ? "#0a1424" : "#0a1424",
+    }));
+    const resultKpis=KPIS.map((k)=>({
+      label:k.label, val: resolved ? k.val : "—",
+      border: resolved ? "rgba(23,148,184,0.14)" : "rgba(13,27,46,0.07)",
+      bg: resolved ? "rgba(23,148,184,0.06)" : "#ffffff",
+      valColor: resolved ? "#0f6f85" : "#55637a",
+    }));
+    return {
+      statusText: solving ? "İş zekâsı bileşenleri ve işlem zincirini çözümlüyor…" : (resolved ? "Ağaç çözümlendi — en uygun parkur kuruldu" : "Tanım bekleniyor…"),
+      statusColor: solving ? "#0b5cff" : (resolved ? "#0f6f85" : "#55637a"),
+      statusDot: solving ? "#0b5cff" : (resolved ? "#0f6f85" : "#8a97ab"),
+      statusPulse: (solving) ? "animation:bssBlink .8s ease-in-out infinite alternate;" : "",
+      runLabel: resolved ? "Yeniden çöz" : (solving ? "Çözümleniyor…" : "Ürünü tanımla"),
+      runIcon: resolved ? "rotate-cw" : "sparkles",
+      runBom: ()=>this.run(),
+      rows, components:COMPONENTS, alts, resultKpis, steps:STEPS,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

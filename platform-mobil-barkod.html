@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Mobil Barkod Sistemleri — BSS Platform</title>
+<meta name="description" content="Sahadaki her bobin, palet ve sevkiyat el terminaliyle okunur; hareket okunduğu anda WinPremium'a işler. Kâğıt fiş yok, gecikmeli giriş yok — stok ve üretim" />
+<meta property="og:title" content="Mobil Barkod Sistemleri — BSS Platform" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#dfeeff" />
+<link rel="icon" type="image/svg+xml" href="brand/logo/bss-mark-primary.svg" />
+
+<link rel="stylesheet" href="_ds/bssweb-design-system-e840475c-38e0-46cf-80fb-1224d8960e0b/tokens/fonts.css" />
+<link rel="stylesheet" href="_ds/bssweb-design-system-e840475c-38e0-46cf-80fb-1224d8960e0b/tokens/colors.css" />
+<link rel="stylesheet" href="_ds/bssweb-design-system-e840475c-38e0-46cf-80fb-1224d8960e0b/tokens/gradients.css" />
+<link rel="stylesheet" href="_ds/bssweb-design-system-e840475c-38e0-46cf-80fb-1224d8960e0b/tokens/motion.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.min.js" defer></script>
+
+<script src="reveal-boot.js"></script>
+<script src="mobile-layer.js"></script>
+<link rel="stylesheet" href="bss.css">
+</helmet>
+
+<div style="position:relative;isolation:isolate;background:#dfeeff;">
+  <div aria-hidden="true" data-page-bg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;background-image:linear-gradient(168deg,rgba(11,92,255,.26) 0%,rgba(56,132,255,.12) 22%,rgba(255,255,255,0.1) 44%,rgba(23,148,184,.13) 68%,rgba(11,92,255,.28) 100%),url('brand/backgrounds/page-flow-light.webp');background-repeat:no-repeat;background-position:top center;background-size:100% 100%;"></div>
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:100;padding-top:14px;pointer-events:none;">
+    <div style="width:100%;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div style="pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;height:58px;padding:0 12px 0 18px;border:1px solid rgba(13,27,46,0.1);border-radius:999px;background:rgba(255,255,255,0.62);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px) saturate(150%);box-shadow:0 12px 40px rgba(13,27,46,0.1),inset 0 1px 0 rgba(13,27,46,0.06);">
+        <a href="index.html" style="display:inline-flex;align-items:center;gap:11px;">
+          <img src="brand/logo/bss-logo-primary.svg" alt="BSS Technology" width="804" height="306" decoding="async" style="display:block;height:42px;width:auto;">
+        </a>
+        <span style="display:flex;align-items:center;gap:9px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#55637a;">
+          <a href="index.html" style="color:#55637a;">PLATFORM</a><span style="opacity:.5;">/</span><span style="color:#0a1424;">MOBİL BARKOD</span>
+        </span>
+        <a href="#iletisim" style="display:inline-flex;align-items:center;height:38px;padding:0 18px;border-radius:999px;background:linear-gradient(180deg,#0b5cff,#0b5cff);color:#fff;font-size:14px;font-weight:600;white-space:nowrap;box-shadow:0 0 24px rgba(11,92,255,0.14),inset 0 1px 0 rgba(13,27,46,0.12);">Demo Talep Edin</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO: split image + copy -->
+  <section data-screen-label="Mobil barkod hero" style="position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 96px;">
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;"><img fetchpriority="high" decoding="async" src="brand/backgrounds/aurora-soft.webp" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center;" /><span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.5) 38%,rgba(255,255,255,0.12) 62%,rgba(255,255,255,0) 100%),linear-gradient(180deg,rgba(255,255,255,0.14) 0%,rgba(255,255,255,0.34) 44%,rgba(255,255,255,0.5) 78%,rgba(255,255,255,.42) 97%);"></span><span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.22) 52%,rgba(255,255,255,.22) 94%);"></span></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(90% 70% at 82% 8%,rgba(11,92,255,0.14),transparent 55%),radial-gradient(80% 80% at 8% 100%,rgba(23,148,184,0.14),transparent 60%),linear-gradient(155deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,.42) 55%,rgba(255,255,255,.42) 100%);"></div>
+    <div style="position:relative;z-index:1;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;">
+      <div>
+        <p style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0847c4;"><span style="width:22px;height:1px;background:#0b5cff;"></span>PLATFORM · 04 — MOBİL BARKOD SİSTEMLERİ</p>
+        <h1 style="max-width:15ch;margin-top:18px;font-size:clamp(32px,4.6vw,60px);line-height:1.12;color:#0a1424;">Fiziksel hareketin <span style="display:inline-block;padding-bottom:.16em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;;line-height:1.14">dijital izi.</span></h1>
+        <p style="max-width:46ch;margin-top:18px;color:#4c5a70;font-size:clamp(15px,1.1vw,18px);line-height:1.6;">Sahadaki her bobin, palet ve sevkiyat el terminaliyle okunur; hareket okunduğu anda WinPremium'a işler. Kâğıt fiş yok, gecikmeli giriş yok — stok ve üretim kaydı sahayla eşzamanlı.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;">
+          <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border:1px solid rgba(13,27,46,0.1);border-radius:999px;font-size:13px;color:#4c5a70;"><i data-lucide="scan-line" style="width:15px;height:15px;color:#0b5cff;"></i>Bobin & palet takibi</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border:1px solid rgba(13,27,46,0.1);border-radius:999px;font-size:13px;color:#4c5a70;"><i data-lucide="boxes" style="width:15px;height:15px;color:#0b5cff;"></i>Lot & parti izi</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border:1px solid rgba(13,27,46,0.1);border-radius:999px;font-size:13px;color:#4c5a70;"><i data-lucide="wifi" style="width:15px;height:15px;color:#0b5cff;"></i>Eşzamanlı ERP</span>
+        </div>
+      </div>
+      <div class="reveal" style="position:relative;">
+        <span aria-hidden="true" style="position:absolute;inset:8% 6% 6% 8%;border-radius:20px;background:radial-gradient(closest-side,rgba(11,92,255,0.14),transparent 72%);filter:blur(40px);"></span>
+        <div style="position:relative;overflow:hidden;border:1px solid rgba(13,27,46,0.1);border-radius:20px;box-shadow:0 46px 100px -40px rgba(13,27,46,0.1),inset 0 1px 0 rgba(13,27,46,0.08);aspect-ratio:4/5;">
+          <img loading="lazy" decoding="async" src="visuals/barcode-04-hero-en.webp" alt="Operator scanning a reel barcode with a handheld terminal" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOW: SCAN → IDENTIFY → RECORD → UPDATE -->
+  <section data-screen-label="Akış" style="position:relative;z-index:1;overflow:hidden;padding-block:96px;">
+    <span aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(70% 60% at 15% 0%,rgba(23,148,184,0.14),transparent 55%),radial-gradient(60% 60% at 100% 100%,rgba(11,92,255,0.14),transparent 60%);"></span>
+    <div style="position:relative;z-index:1;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div class="reveal" style="max-width:52rem;margin-bottom:44px;">
+        <p style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0f6f85;"><span style="width:22px;height:1px;background:#1794b8;"></span>OKUMADAN KAYDA</p>
+        <h2 style="margin-top:16px;font-size:clamp(26px,3.2vw,42px);line-height:1.08;color:#0a1424;">Bir okutma, dört adımda deftere işler.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
+        <sc-for list="{{ flow }}" as="f" hint-placeholder-count="4">
+          <article class="reveal" style-hover="box-shadow:0 20px 46px -20px rgba(13,27,46,.28);border-color:rgba(11,92,255,.22);" style="position:relative;overflow:hidden;padding:22px;border-radius:20px;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+            <span style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(13,27,46,0.12),transparent);"></span>
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;border:1px solid rgba(11,92,255,0.16);background:rgba(11,92,255,0.12);color:#0b5cff;"><i data-lucide="{{ f.icon }}" style="width:21px;height:21px;"></i></span>
+              <span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;color:#55637a;">{{ f.num }}</span>
+            </div>
+            <h3 style="margin-top:16px;font-size:16px;font-weight:600;color:#0a1424;">{{ f.title }}</h3>
+            <p style="margin-top:7px;font-size:13px;line-height:1.55;color:#4c5a70;">{{ f.desc }}</p>
+          </article>
+        </sc-for>
+      </div>
+      <p class="reveal" style="margin-top:26px;padding-left:16px;border-left:2px solid #1794b8;font-size:13px;line-height:1.6;color:#55637a;max-width:70ch;">Kaynak modüller: Bobin Giriş-Çıkış · Palet Hareketleri · Barkod Hareketleri · Depo Stok. Her hareket ilgili iş emri ve lota bağlanır.</p>
+    </div>
+  </section>
+
+  <!-- SECOND IMAGE + point -->
+  <section data-screen-label="Sahada" style="position:relative;z-index:1;overflow:hidden;padding-block:96px;">
+    <span aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(60% 60% at 90% 10%,rgba(11,92,255,0.14),transparent 58%);"></span>
+    <div style="position:relative;z-index:1;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;">
+      <div class="reveal" style="position:relative;order:2;">
+        <span aria-hidden="true" style="position:absolute;inset:8%;border-radius:20px;background:radial-gradient(closest-side,rgba(23,148,184,0.14),transparent 72%);filter:blur(40px);"></span>
+        <div style="position:relative;overflow:hidden;border:1px solid rgba(13,27,46,0.1);border-radius:20px;box-shadow:0 46px 100px -40px rgba(13,27,46,0.1),inset 0 1px 0 rgba(13,27,46,0.08);aspect-ratio:1/1;">
+          <img loading="lazy" decoding="async" src="visuals/barcode-04-b.webp" alt="Operatör palet barkodunu okutuyor, arkada canlı ERP paneli" style="width:100%;height:100%;object-fit:cover;object-position:center;" />
+        </div>
+      </div>
+      <div class="reveal" style="order:1;">
+        <p style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0847c4;"><span style="width:22px;height:1px;background:#0b5cff;"></span>SAHADA</p>
+        <h2 style="max-width:16ch;margin-top:16px;font-size:clamp(24px,3vw,40px);line-height:1.06;color:#0a1424;">Okutulan palet, yönetim ekranında anında görünür.</h2>
+        <p style="max-width:46ch;margin-top:16px;color:#4c5a70;font-size:16px;line-height:1.6;">Sahadaki operatör paleti okuttuğunda kayıt tek yönlü değildir: stok düşer, sevk emri güncellenir, üretim kaydı oluşur ve yönetici panelindeki sayı aynı saniyede değişir.</p>
+        <ul style="display:flex;flex-direction:column;gap:12px;margin-top:22px;">
+          <sc-for list="{{ points }}" as="p" hint-placeholder-count="3">
+            <li style="display:flex;align-items:flex-start;gap:11px;"><span style="display:grid;flex:none;place-items:center;width:26px;height:26px;border-radius:50%;border:1px solid rgba(23,148,184,0.14);background:rgba(23,148,184,0.08);color:#0f6f85;"><i data-lucide="check" style="width:14px;height:14px;"></i></span><span style="padding-top:2px;font-size:14px;line-height:1.5;color:#4c5a70;">{{ p }}</span></li>
+          </sc-for>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEXTUAL TRANSITION -->
+  <section id="iletisim" data-screen-label="Sonraki" style="position:relative;z-index:1;padding-block:40px 112px;">
+    <div style="max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <a href="platform-guvenlik.html" class="reveal" style="position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;overflow:hidden;padding:clamp(28px,4vw,44px);border-radius:20px;color:#0a1424;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+        <span style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#1794b8,#0b5cff,transparent 75%);"></span>
+        <div style="position:relative;">
+          <p style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#0f6f85;">SONRAKİ · 05 — GÜVENLİK VE UYUMLULUK</p>
+          <h2 style="max-width:24ch;margin-top:14px;font-size:clamp(24px,3vw,40px);line-height:1.12;">Her hareketi kimin yaptığı, <span style="display:inline-block;padding-bottom:.16em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;;line-height:1.14">erişimle tanımlanır.</span></h2>
+        </div>
+        <span style="position:relative;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;border:1px solid rgba(13,27,46,0.12);background:rgba(13,27,46,0.05);font-size:15px;font-weight:600;white-space:nowrap;">Devam edin<i data-lucide="arrow-right" style="width:18px;height:18px;"></i></span>
+      </a>
+      <p style="margin-top:32px;text-align:center;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:12px;color:#55637a;"><a href="platform-yonetici-dashboard.html" style="color:#55637a;">← 03 Yönetici Dashboard</a> · <a href="index.html" style="color:#55637a;">Ana sayfa</a></p>
+    </div>
+  </section>
+
+  <footer style="position:relative;z-index:1;padding-block:88px 40px;border-top:1px solid rgba(13,27,46,.07);">
+    <div style="max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div style="display:grid;grid-template-columns:minmax(0,1.1fr) repeat(4,minmax(0,1fr));gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(13,27,46,.08);">
+        <div>
+          <a href="index.html" style="display:inline-flex;align-items:center;gap:11px;">
+            <img src="brand/logo/bss-logo-primary.svg" alt="BSS Technology" width="804" height="306" decoding="async" style="display:block;height:42px;width:auto;">
+          </a>
+          <p style="max-width:30ch;margin-top:18px;font-size:14px;line-height:1.6;color:#4c5a70;">Üretim bilgisini teknolojiye dönüştürüyoruz.</p>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">PLATFORM</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="platform-moduller.html" style="font-size:14px;color:#4c5a70;">Modüller</a></li>
+            <li><a href="platform-urun-agaci.html" style="font-size:14px;color:#4c5a70;">Ürün ağacı</a></li>
+            <li><a href="platform-maliyet.html" style="font-size:14px;color:#4c5a70;">Maliyet</a></li>
+            <li><a href="platform-otomasyon.html" style="font-size:14px;color:#4c5a70;">Otomasyon</a></li>
+            <li><a href="#top" style="font-size:14px;color:#4c5a70;">Mobil barkod</a></li>
+            <li><a href="platform-yonetici-dashboard.html" style="font-size:14px;color:#4c5a70;">Yönetici dashboard</a></li>
+            <li><a href="platform-olceklenebilirlik.html" style="font-size:14px;color:#4c5a70;">Ölçeklenebilirlik</a></li>
+            <li><a href="platform-guvenlik.html" style="font-size:14px;color:#4c5a70;">Güvenlik</a></li>
+            <li><a href="platform-gxp.html" style="font-size:14px;color:#4c5a70;">GxP</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">ÇÖZÜMLER</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="cozum-erp.html" style="font-size:14px;color:#4c5a70;">ERP</a></li>
+            <li><a href="cozum-mes.html" style="font-size:14px;color:#4c5a70;">MES</a></li>
+            <li><a href="cozum-mrp.html" style="font-size:14px;color:#4c5a70;">MRP</a></li>
+            <li><a href="cozum-otomasyon.html" style="font-size:14px;color:#4c5a70;">Otomasyon</a></li>
+            <li><a href="cozum-bulut-sunucu.html" style="font-size:14px;color:#4c5a70;">Bulut sunucu</a></li>
+            <li><a href="cozum-sektore-ozel.html" style="font-size:14px;color:#4c5a70;">Sektöre özel</a></li>
+            <li><a href="cozum-sektore-gore.html" style="font-size:14px;color:#4c5a70;">Sektöre göre</a></li>
+            <li><a href="cozum-yz-finansal-analiz.html" style="font-size:14px;color:#4c5a70;">YZ finansal analiz</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">KULLANIM</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="kullanim-uretim-planlama.html" style="font-size:14px;color:#4c5a70;">Üretim planlama</a></li>
+            <li><a href="kullanim-izlenebilirlik.html" style="font-size:14px;color:#4c5a70;">İzlenebilirlik</a></li>
+            <li><a href="kullanim-kalite.html" style="font-size:14px;color:#4c5a70;">Kalite</a></li>
+            <li><a href="kullanim-wms.html" style="font-size:14px;color:#4c5a70;">WMS</a></li>
+            <li><a href="kullanim-scm.html" style="font-size:14px;color:#4c5a70;">SCM</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">ŞİRKET</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="sirket-hakkimizda.html" style="font-size:14px;color:#4c5a70;">Hakkımızda</a></li>
+            <li><a href="sirket-kaynaklar.html" style="font-size:14px;color:#4c5a70;">Kaynaklar</a></li>
+            <li><a href="sirket-iletisim.html" style="font-size:14px;color:#4c5a70;">İletişim</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:24px;">
+        <p style="font-size:12px;color:#55637a;">© 2026 BSS Technology · WinPremium</p>
+        <a href="sirket-iletisim.html" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;background:#0b5cff;color:#fff;font-size:14px;font-weight:600;">Demo Talep Edin</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+const FLOW = [
+  { num:"01", icon:"scan-line", title:"Okut", desc:"Operatör bobin, palet veya sevkiyat barkodunu el terminaliyle okur." },
+  { num:"02", icon:"search-check", title:"Tanı", desc:"Sistem malzemeyi tanır: kod, lot, miktar ve lokasyon anında ekrana gelir." },
+  { num:"03", icon:"clipboard-check", title:"Kaydet", desc:"Hareket ilgili iş emri ve lota yazılır; stok gerçek zamanlı düşer veya artar." },
+  { num:"04", icon:"refresh-cw", title:"Güncelle", desc:"Üretim kaydı oluşur; yönetim panelindeki stok ve durum aynı anda değişir." },
+];
+const POINTS = [
+  "Stok hareketi okunduğu anda düşer — vardiya sonu sayımı beklenmez.",
+  "Sevk emri ve irsaliye paletle eşleşir; yanlış yükleme riski azalır.",
+  "Her okutma kullanıcı ve zaman damgasıyla denetim izine geçer.",
+];
+
+class Component extends DCLogic {
+  componentDidMount(){ document.documentElement.lang="tr"; this.icons(); this.revealFallback(); }
+  componentDidUpdate(){ this.icons(); }
+  componentWillUnmount(){ if(this.io) this.io.disconnect(); }
+  icons(){ if(window.lucide&&window.lucide.createIcons){ try{ window.lucide.createIcons(); }catch(e){} } }
+  revealFallback(){
+    if(!("IntersectionObserver" in window)){ document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in")); return; }
+    this.io=new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); this.io.unobserve(e.target); } }); },{threshold:0.12});
+    document.querySelectorAll(".reveal").forEach(el=>this.io.observe(el));
+  }
+  renderVals(){ return { flow: FLOW, points: POINTS }; }
+}
+
+</script>
+</body>
+</html>

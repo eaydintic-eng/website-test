@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Güvenlik ve Uyumluluk — BSS Platform</title>
+<meta name="description" content="Equinix, dünya genelinde 30'dan fazla ülkede 260'tan fazla veri merkezi işleten, küresel bankaların ve teknoloji devlerinin altyapısını barındıran bir oper" />
+<meta property="og:title" content="Güvenlik ve Uyumluluk — BSS Platform" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#dfeeff" />
+<link rel="icon" type="image/svg+xml" href="brand/logo/bss-mark-primary.svg" />
+
+<link rel="stylesheet" href="bss.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.min.js" defer></script>
+<style>
+  @keyframes flowDash{to{stroke-dashoffset:-16;}}
+</style>
+<script src="reveal-boot.js"></script>
+<script src="mobile-layer.js"></script>
+</helmet>
+
+<div style="position:relative;isolation:isolate;background:#dfeeff;">
+  <div aria-hidden="true" data-page-bg style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;background-image:linear-gradient(168deg,rgba(11,92,255,.26) 0%,rgba(56,132,255,.12) 22%,rgba(255,255,255,0.1) 44%,rgba(23,148,184,.13) 68%,rgba(11,92,255,.28) 100%),url('brand/backgrounds/page-flow-light.webp');background-repeat:no-repeat;background-position:top center;background-size:100% 100%;"></div>
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:100;padding-top:14px;pointer-events:none;">
+    <div style="width:100%;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div style="pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;height:58px;padding:0 12px 0 18px;border:1px solid rgba(13,27,46,0.1);border-radius:999px;background:rgba(255,255,255,0.62);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px) saturate(150%);box-shadow:0 12px 40px rgba(13,27,46,0.1),inset 0 1px 0 rgba(13,27,46,0.06);">
+        <a href="index.html" style="display:inline-flex;align-items:center;gap:11px;">
+          <img src="brand/logo/bss-logo-primary.svg" alt="BSS Technology" width="804" height="306" decoding="async" style="display:block;height:42px;width:auto;">
+        </a>
+        <span style="display:flex;align-items:center;gap:9px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#55637a;">
+          <a href="index.html" style="color:#55637a;">PLATFORM</a><span style="opacity:.5;">/</span><span style="color:#0a1424;">GÜVENLİK &AMP; UYUMLULUK</span>
+        </span>
+        <a href="#iletisim" style="display:inline-flex;align-items:center;height:38px;padding:0 18px;border-radius:999px;background:linear-gradient(180deg,#0b5cff,#0b5cff);color:#fff;font-size:14px;font-weight:600;white-space:nowrap;box-shadow:0 0 24px rgba(11,92,255,0.14),inset 0 1px 0 rgba(13,27,46,0.12);">Demo Talep Edin</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO: full-bleed data-center hall -->
+  <section data-screen-label="Güvenlik hero" style="position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;padding:120px 0 90px;">
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;"><img fetchpriority="high" decoding="async" src="visuals/dc-hall.webp" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center;"><span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.5) 38%,rgba(255,255,255,0.12) 62%,rgba(255,255,255,0) 100%),linear-gradient(180deg,rgba(255,255,255,0.14) 0%,rgba(255,255,255,0.34) 44%,rgba(255,255,255,0.5) 78%,rgba(255,255,255,.42) 97%);"></span></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(255,255,255,0.5) 0%,rgba(11,92,255,0.1) 42%,rgba(255,255,255,0.35) 70%,rgba(255,255,255,0.1) 100%),linear-gradient(0deg,rgba(255,255,255,0.5),transparent 55%);"></div>
+    <div style="position:relative;z-index:2;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);width:100%;">
+      <div style="max-width:40rem;">
+        <p style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0847c4;"><span style="width:22px;height:1px;background:#0b5cff;"></span>PLATFORM · 05 — GÜVENLİK VE UYUMLULUK</p>
+        <h1 style="max-width:18ch;margin-top:18px;font-size:clamp(32px,4.8vw,64px);line-height:1.12;color:#0a1424;">Veriniz, dünyanın en güvenli <span style="display:inline-block;padding-bottom:.16em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;;line-height:1.14">veri merkezinde.</span></h1>
+        <p style="max-width:50ch;margin-top:18px;color:#4c5a70;font-size:clamp(15px,1.15vw,19px);line-height:1.6;">Bulut çözümümüz, dünyanın en büyük veri merkezi operatörü <b style="color:#0a1424;">Equinix</b>'te barınır. Her fabrikanın verisi ayrı ve şifreli tutulur; sisteminiz mevcut yazılımlarınızla uyumlu çalışır.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;">
+          <a href="#bulut" style="display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 22px;border-radius:999px;background:linear-gradient(180deg,#0b5cff,#0b5cff);color:#fff;font-size:14px;font-weight:600;box-shadow:0 0 28px rgba(11,92,255,0.14);">Bulut altyapımızı görün<i data-lucide="arrow-right" style="width:16px;height:16px;"></i></a>
+          <a href="#uyumluluk" style="display:inline-flex;align-items:center;height:46px;padding:0 22px;border-radius:999px;border:1px solid rgba(13,27,46,0.12);background:rgba(13,27,46,0.04);color:#0a1424;font-size:14px;font-weight:600;">Entegrasyon</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUINIX cloud focus -->
+  <section id="bulut" data-screen-label="Equinix bulut" style="position:relative;z-index:1;overflow:hidden;padding-block:96px;">
+    <span aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(60% 60% at 88% 0%,rgba(11,92,255,0.14),transparent 58%);"></span>
+    <div style="position:relative;z-index:1;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;">
+      <div class="reveal">
+        <p style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0f6f85;"><span style="width:22px;height:1px;background:#1794b8;"></span>BULUT ALTYAPISI · EQUİNİX</p>
+        <h2 style="max-width:16ch;margin-top:16px;font-size:clamp(26px,3.2vw,44px);line-height:1.06;color:#0a1424;">Verilerinizi, dünyanın internet omurgasında saklıyoruz.</h2>
+        <p style="max-width:52ch;margin-top:16px;color:#4c5a70;font-size:16px;line-height:1.62;">Equinix, dünya genelinde 30'dan fazla ülkede 260'tan fazla veri merkezi işleten, küresel bankaların ve teknoloji devlerinin altyapısını barındıran bir operatördür. BSS bulut çözümü bu tesislerde çalışır — yani veriniz, dünyanın en kritik sistemleriyle aynı çatı altında, aynı standartta korunur.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px;">
+          <sc-for list="{{ eqStats }}" as="s" hint-placeholder-count="3">
+            <div style="padding:16px 14px;border-radius:16px;background:linear-gradient(150deg,rgba(255,255,255,.8),rgba(255,255,255,.6));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.7);box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 10px 22px -14px rgba(9,38,84,.3);">
+              <div style="display:inline-block;padding-bottom:.16em;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:clamp(22px,2.4vw,30px);font-weight:700;letter-spacing:-.02em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;;line-height:1.14">{{ s.v }}</div>
+              <div style="margin-top:4px;font-size:12px;line-height:1.4;color:#4c5a70;">{{ s.k }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div class="reveal" style="position:relative;">
+        <span aria-hidden="true" style="position:absolute;inset:8%;border-radius:20px;background:radial-gradient(closest-side,rgba(11,92,255,0.14),transparent 72%);filter:blur(40px);"></span>
+        <div style="position:relative;overflow:hidden;border:1px solid rgba(13,27,46,0.1);border-radius:20px;box-shadow:0 46px 100px -40px rgba(13,27,46,0.1),inset 0 1px 0 rgba(13,27,46,0.08);aspect-ratio:16/10;">
+          <img loading="lazy" decoding="async" src="visuals/dc-servers.webp" alt="Equinix veri merkezinde sunucu rafları" style="width:100%;height:100%;object-fit:cover;">
+          <span style="position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid rgba(13,27,46,0.12);border-radius:999px;background:rgba(255,255,255,0.72);font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.06em;color:#0a1424;"><i data-lucide="server" style="width:14px;height:14px;color:#0f6f85;"></i>EQUINIX · BSS Fiber Cloud</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- security attributes -->
+    <div style="position:relative;z-index:1;max-width:1240px;margin:36px auto 0;padding-inline:clamp(16px,3vw,32px);">
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
+        <sc-for list="{{ secAttrs }}" as="a" hint-placeholder-count="4">
+          <article style-hover="box-shadow:0 20px 46px -20px rgba(13,27,46,.28);border-color:rgba(11,92,255,.22);" style="position:relative;overflow:hidden;padding:20px;border-radius:20px;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+            <span style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(13,27,46,0.12),transparent);"></span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:12px;border:1px solid rgba(11,92,255,0.16);background:rgba(11,92,255,0.12);color:#0b5cff;"><i data-lucide="{{ a.icon }}" style="width:20px;height:20px;"></i></span>
+            <h3 style="margin-top:14px;font-size:15px;font-weight:600;color:#0a1424;">{{ a.title }}</h3>
+            <p style="margin-top:6px;font-size:12px;line-height:1.5;color:#4c5a70;">{{ a.desc }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ISOLATION + local option -->
+  <section data-screen-label="Veri izolasyonu" style="position:relative;z-index:1;overflow:hidden;padding-block:96px;">
+    <div style="position:relative;z-index:1;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div class="reveal" style="max-width:52rem;margin-bottom:36px;">
+        <p style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0847c4;"><span style="width:22px;height:1px;background:#0b5cff;"></span>VERİ İZOLASYONU</p>
+        <h2 style="margin-top:16px;font-size:clamp(26px,3.2vw,42px);line-height:1.08;color:#0a1424;">Her fabrikanın verisi, kendi kasasında.</h2>
+        <p style="max-width:56ch;margin-top:14px;color:#4c5a70;font-size:16px;line-height:1.6;">Yüzlerce tesis aynı altyapıda barınır; ama hiçbir fabrikanın verisi bir diğeriyle karışmaz. Her tesis kendi izole, şifreli veritabanında tutulur — ister Equinix bulutunda, ister tesisinizdeki lokal sunucuda.</p>
+      </div>
+
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+        <sc-for list="{{ vaults }}" as="v" hint-placeholder-count="3">
+          <article style-hover="box-shadow:0 20px 46px -20px rgba(13,27,46,.28);border-color:rgba(11,92,255,.22);" style="position:relative;overflow:hidden;padding:20px;border-radius:20px;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+            <span style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(13,27,46,0.12),transparent);"></span>
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="display:flex;align-items:center;gap:10px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:12px;border:1px solid rgba(11,92,255,0.16);background:rgba(11,92,255,0.12);color:#0b5cff;"><i data-lucide="factory" style="width:19px;height:19px;"></i></span><span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:14px;font-weight:600;color:#0a1424;">{{ v.site }}</span></span>
+              <i data-lucide="lock" style="width:15px;height:15px;color:#0f6f85;"></i>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin:16px 0 6px;"><span style="flex:1;border-top:1px dashed rgba(11,92,255,0.14);"></span><i data-lucide="chevron-down" style="width:14px;height:14px;color:#55637a;"></i><span style="flex:1;border-top:1px dashed rgba(11,92,255,0.14);"></span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:12px;border:1px solid rgba(23,148,184,0.14);border-radius:12px;background:rgba(23,148,184,0.05);">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:12px;background:rgba(23,148,184,0.14);color:#0f6f85;"><i data-lucide="database" style="width:17px;height:17px;"></i></span>
+              <span style="min-width:0;"><span style="display:block;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.06em;color:#0f6f85;">{{ v.db }}</span><span style="display:block;font-size:12px;color:#4c5a70;">İzole · şifreli</span></span>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;">
+        <sc-for list="{{ deployCards }}" as="d" hint-placeholder-count="2">
+          <article style="position:relative;overflow:hidden;padding:24px;border:1px solid {{ d.border }};border-radius:16px;background:{{ d.bg }};box-shadow:0 2px 8px rgba(13,27,46,0.1);">
+            <span style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(13,27,46,0.12),transparent);"></span>
+            <div style="display:flex;align-items:center;gap:11px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;border:1px solid {{ d.iconBorder }};background:{{ d.iconBg }};color:{{ d.iconColor }};"><i data-lucide="{{ d.icon }}" style="width:21px;height:21px;"></i></span><span><span style="display:block;font-size:17px;font-weight:600;color:#0a1424;">{{ d.title }}</span><span style="display:block;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.06em;color:{{ d.tagColor }};">{{ d.tag }}</span></span></div>
+            <p style="margin-top:14px;font-size:14px;line-height:1.6;color:#4c5a70;">{{ d.desc }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- UYUMLULUK: integration hub -->
+  <section id="uyumluluk" data-screen-label="Uyumluluk" style="position:relative;z-index:1;overflow:hidden;padding-block:96px;">
+    <span aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(60% 60% at 12% 10%,rgba(23,148,184,0.14),transparent 58%);"></span>
+    <div style="position:relative;z-index:1;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div class="reveal" style="max-width:52rem;margin-bottom:36px;">
+        <p style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0847c4;"><span style="width:22px;height:1px;background:#0b5cff;"></span>UYUMLULUK &AMP; ENTEGRASYON</p>
+        <h2 style="margin-top:16px;font-size:clamp(26px,3.2vw,42px);line-height:1.08;color:#0a1424;">Mevcut yazılımlarınızla aynı dili konuşur.</h2>
+        <p style="max-width:56ch;margin-top:14px;color:#4c5a70;font-size:16px;line-height:1.6;">ERP, MRP, MES ve AI çözümlerimiz kapalı bir kutu değildir. Halihazırda kullandığınız finans, ERP ve CRM yazılımlarıyla entegre çalışacak şekilde tasarlanır.</p>
+      </div>
+
+      <div class="reveal" style="display:grid;grid-template-columns:auto auto 1fr;gap:clamp(16px,3vw,32px);align-items:center;padding:clamp(20px,3vw,32px);border-radius:20px;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:74px;height:74px;border-radius:20px;background:linear-gradient(180deg,#0b5cff,#0b5cff);box-shadow:0 0 40px rgba(11,92,255,0.14),inset 0 1px 0 rgba(13,27,46,0.12);font-weight:800;font-size:26px;color:#fff;">b</span>
+          <span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:13px;font-weight:600;color:#0a1424;">bssweb</span>
+          <span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.08em;color:#55637a;">ERP · MRP · MES · AI</span>
+        </div>
+        <svg viewBox="0 0 60 120" preserveAspectRatio="none" style="width:60px;height:120px;overflow:visible;">
+          <path d="M2 60 H58" stroke="rgba(11,92,255,0.14)" stroke-width="2" stroke-dasharray="4 4" style="animation:flowDash 1s linear infinite;"></path>
+          <path d="M2 60 C30 60 30 20 58 20" fill="none" stroke="rgba(11,92,255,0.14)" stroke-width="2" stroke-dasharray="4 4" style="animation:flowDash 1.2s linear infinite;"></path>
+          <path d="M2 60 C30 60 30 100 58 100" fill="none" stroke="rgba(11,92,255,0.14)" stroke-width="2" stroke-dasharray="4 4" style="animation:flowDash 1.4s linear infinite;"></path>
+        </svg>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+          <sc-for list="{{ connectors }}" as="c" hint-placeholder-count="6">
+            <div style="display:flex;align-items:center;gap:10px;padding:13px 14px;border-radius:12px;background:linear-gradient(150deg,rgba(255,255,255,.8),rgba(255,255,255,.6));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.7);box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 10px 22px -14px rgba(9,38,84,.3);">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:12px;background:rgba(23,148,184,0.1);border:1px solid rgba(23,148,184,0.14);color:#0f6f85;"><i data-lucide="{{ c.icon }}" style="width:16px;height:16px;"></i></span>
+              <span style="font-size:13px;font-weight:500;color:#4c5a70;">{{ c.label }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px;">
+        <sc-for list="{{ intPillars }}" as="p" hint-placeholder-count="3">
+          <article style-hover="box-shadow:0 20px 46px -20px rgba(13,27,46,.28);border-color:rgba(11,92,255,.22);" style="position:relative;overflow:hidden;padding:22px;border-radius:20px;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+            <span style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(13,27,46,0.12),transparent);"></span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;border:1px solid rgba(11,92,255,0.16);background:rgba(11,92,255,0.12);color:#0b5cff;"><i data-lucide="{{ p.icon }}" style="width:21px;height:21px;"></i></span>
+            <h3 style="margin-top:16px;font-size:16px;font-weight:600;color:#0a1424;">{{ p.title }}</h3>
+            <p style="margin-top:7px;font-size:13px;line-height:1.55;color:#4c5a70;">{{ p.desc }}</p>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSITION -->
+  <section id="iletisim" data-screen-label="Sonraki" style="position:relative;z-index:1;padding-block:20px 112px;">
+    <div style="max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <a href="platform-urun-agaci.html" class="reveal" style="position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;overflow:hidden;padding:clamp(28px,4vw,44px);border-radius:20px;color:#0a1424;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+        <span style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#1794b8,#0b5cff,transparent 75%);"></span>
+        <div style="position:relative;">
+          <p style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#0f6f85;">SONRAKİ · 06 — ÜRÜN AĞACI OLUŞTURMA</p>
+          <h2 style="max-width:24ch;margin-top:14px;font-size:clamp(24px,3vw,40px);line-height:1.12;">Veri güvende ve uyumlu olunca, sıra <span style="display:inline-block;padding-bottom:.16em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;;line-height:1.14">yapıyı kurmaya gelir.</span></h2>
+        </div>
+        <span style="position:relative;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;border:1px solid rgba(13,27,46,0.12);background:rgba(13,27,46,0.05);font-size:15px;font-weight:600;white-space:nowrap;">Devam edin<i data-lucide="arrow-right" style="width:18px;height:18px;"></i></span>
+      </a>
+      <p style="margin-top:32px;text-align:center;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:12px;color:#55637a;"><a href="platform-mobil-barkod.html" style="color:#55637a;">← 04 Mobil Barkod</a> · <a href="index.html" style="color:#55637a;">Ana sayfa</a></p>
+    </div>
+  </section>
+
+  <footer style="position:relative;z-index:1;padding-block:88px 40px;border-top:1px solid rgba(13,27,46,.07);">
+    <div style="max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div style="display:grid;grid-template-columns:minmax(0,1.1fr) repeat(4,minmax(0,1fr));gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(13,27,46,.08);">
+        <div>
+          <a href="index.html" style="display:inline-flex;align-items:center;gap:11px;">
+            <img src="brand/logo/bss-logo-primary.svg" alt="BSS Technology" width="804" height="306" decoding="async" style="display:block;height:42px;width:auto;">
+          </a>
+          <p style="max-width:30ch;margin-top:18px;font-size:14px;line-height:1.6;color:#4c5a70;">Üretim bilgisini teknolojiye dönüştürüyoruz.</p>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">PLATFORM</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="platform-moduller.html" style="font-size:14px;color:#4c5a70;">Modüller</a></li>
+            <li><a href="platform-urun-agaci.html" style="font-size:14px;color:#4c5a70;">Ürün ağacı</a></li>
+            <li><a href="platform-maliyet.html" style="font-size:14px;color:#4c5a70;">Maliyet</a></li>
+            <li><a href="platform-otomasyon.html" style="font-size:14px;color:#4c5a70;">Otomasyon</a></li>
+            <li><a href="platform-mobil-barkod.html" style="font-size:14px;color:#4c5a70;">Mobil barkod</a></li>
+            <li><a href="platform-yonetici-dashboard.html" style="font-size:14px;color:#4c5a70;">Yönetici dashboard</a></li>
+            <li><a href="platform-olceklenebilirlik.html" style="font-size:14px;color:#4c5a70;">Ölçeklenebilirlik</a></li>
+            <li><a href="#top" style="font-size:14px;color:#4c5a70;">Güvenlik</a></li>
+            <li><a href="platform-gxp.html" style="font-size:14px;color:#4c5a70;">GxP</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">ÇÖZÜMLER</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="cozum-erp.html" style="font-size:14px;color:#4c5a70;">ERP</a></li>
+            <li><a href="cozum-mes.html" style="font-size:14px;color:#4c5a70;">MES</a></li>
+            <li><a href="cozum-mrp.html" style="font-size:14px;color:#4c5a70;">MRP</a></li>
+            <li><a href="cozum-otomasyon.html" style="font-size:14px;color:#4c5a70;">Otomasyon</a></li>
+            <li><a href="cozum-bulut-sunucu.html" style="font-size:14px;color:#4c5a70;">Bulut sunucu</a></li>
+            <li><a href="cozum-sektore-ozel.html" style="font-size:14px;color:#4c5a70;">Sektöre özel</a></li>
+            <li><a href="cozum-sektore-gore.html" style="font-size:14px;color:#4c5a70;">Sektöre göre</a></li>
+            <li><a href="cozum-yz-finansal-analiz.html" style="font-size:14px;color:#4c5a70;">YZ finansal analiz</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">KULLANIM</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="kullanim-uretim-planlama.html" style="font-size:14px;color:#4c5a70;">Üretim planlama</a></li>
+            <li><a href="kullanim-izlenebilirlik.html" style="font-size:14px;color:#4c5a70;">İzlenebilirlik</a></li>
+            <li><a href="kullanim-kalite.html" style="font-size:14px;color:#4c5a70;">Kalite</a></li>
+            <li><a href="kullanim-wms.html" style="font-size:14px;color:#4c5a70;">WMS</a></li>
+            <li><a href="kullanim-scm.html" style="font-size:14px;color:#4c5a70;">SCM</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">ŞİRKET</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="sirket-hakkimizda.html" style="font-size:14px;color:#4c5a70;">Hakkımızda</a></li>
+            <li><a href="sirket-kaynaklar.html" style="font-size:14px;color:#4c5a70;">Kaynaklar</a></li>
+            <li><a href="sirket-iletisim.html" style="font-size:14px;color:#4c5a70;">İletişim</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:24px;">
+        <p style="font-size:12px;color:#55637a;">© 2026 BSS Technology · WinPremium</p>
+        <a href="sirket-iletisim.html" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;background:#0b5cff;color:#fff;font-size:14px;font-weight:600;">Demo Talep Edin</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+const EQ_STATS = [
+  { v:"30+", k:"ülkede küresel veri merkezi ağı" },
+  { v:"260+", k:"Equinix veri merkezi tesisi" },
+  { v:"%99.99", k:"hizmet sürekliliği hedefi" },
+];
+const SEC_ATTRS = [
+  { icon:"database", title:"İzole veritabanı", desc:"Her tesisin verisi ayrı ve erişimi denetlenen bir alanda tutulur." },
+  { icon:"lock", title:"Uçtan uca şifreleme", desc:"Veri hem iletimde hem depoda şifrelenir." },
+  { icon:"history", title:"Otomatik yedekleme", desc:"Şifreli, düzenli yedekleme ve felaket kurtarma planı." },
+  { icon:"shield-check", title:"Fiziksel güvenlik", desc:"7/24 izleme, biyometrik erişim ve kesintisiz güç." },
+];
+const VAULTS = [
+  { site:"BUR-02 · Bursa", db:"db_bur02" },
+  { site:"IST-01 · İstanbul", db:"db_ist01" },
+  { site:"ROT-03 · Rotterdam", db:"db_rot03" },
+];
+const DEPLOY_CARDS = [
+  { icon:"cloud", title:"Bulut · Equinix", tag:"ÖNERİLEN", desc:"Veriniz Equinix veri merkezinde barınır. Donanım, yedekleme ve süreklilikle uğraşmazsınız; ölçeklenme anında yapılır — hepsi BSS güvencesinde.",
+    border:"rgba(23,148,184,0.14)", bg:"linear-gradient(160deg,#ffffff,#ffffff)", iconBorder:"rgba(23,148,184,0.14)", iconBg:"rgba(23,148,184,0.12)", iconColor:"#0f6f85", tagColor:"#0f6f85" },
+  { icon:"server", title:"Lokal sunucu", tag:"ALTERNATİF", desc:"Veriler tesisinizdeki sunucuda tutulur; internet kesilse dahi saha çalışması durmaz. Veri hiçbir zaman binayı terk etmez.",
+    border:"rgba(13,27,46,0.08)", bg:"#ffffff", iconBorder:"rgba(11,92,255,0.16)", iconBg:"rgba(11,92,255,0.12)", iconColor:"#0b5cff", tagColor:"#55637a" },
+];
+const CONNECTORS = [
+  { label:"Finans yazılımları", icon:"wallet" },
+  { label:"Mevcut ERP", icon:"boxes" },
+  { label:"CRM sistemleri", icon:"users" },
+  { label:"e-Fatura / e-İrsaliye", icon:"file-text" },
+  { label:"Banka & POS", icon:"landmark" },
+  { label:"Lojistik & WMS", icon:"truck" },
+];
+const INT_PILLARS = [
+  { icon:"users-round", title:"Kendi mühendis ekibimiz", desc:"Entegrasyonları dış tedarikçiye bırakmayız; deneyimli ekibimiz doğrudan yürütür." },
+  { icon:"zap", title:"Hızlı entegrasyon", desc:"Yaygın finans, ERP ve CRM yazılımları için hazır yaklaşımla kısa sürede bağlanır." },
+  { icon:"git-branch", title:"Açık veri akışı", desc:"Çift yönlü veri alışverişiyle iki sistem tek gerçeği paylaşır; çift kayıt biter." },
+];
+
+class Component extends DCLogic {
+  componentDidMount(){ document.documentElement.lang="tr"; this.icons(); this.revealFallback(); }
+  componentDidUpdate(){ this.icons(); }
+  componentWillUnmount(){ if(this.io) this.io.disconnect(); }
+  icons(){ if(window.lucide&&window.lucide.createIcons){ try{ window.lucide.createIcons(); }catch(e){} } }
+  revealFallback(){
+    if(!("IntersectionObserver" in window)){ document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in")); return; }
+    this.io=new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); this.io.unobserve(e.target); } }); },{threshold:0.12});
+    document.querySelectorAll(".reveal").forEach(el=>this.io.observe(el));
+  }
+  renderVals(){ return { eqStats:EQ_STATS, secAttrs:SEC_ATTRS, vaults:VAULTS, deployCards:DEPLOY_CARDS, connectors:CONNECTORS, intPillars:INT_PILLARS }; }
+}
+
+</script>
+</body>
+</html>

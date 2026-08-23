@@ -1,0 +1,219 @@
+/* ============================================================
+   BSS · ortak stil katmanı
+   27 sayfa bu tek dosyadan beslenir. Sayfaya özel @keyframes ve
+   sayfaya özel sınıflar, o sayfanın <helmet><style> bloğunda kalır.
+   Yükleme sırası: bss.css → sayfa <style> (sayfa kuralı üstte kazanır)
+   ============================================================ */
+
+/* ---------- reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; background:#ffffff; color:#0a1424;
+  font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased; overflow-x:clip; }
+h1,h2,h3,h4 { margin:0; font-family:inherit; font-weight:600; text-wrap:balance; }
+p { margin:0; text-wrap:pretty; }
+ul,ol { margin:0; padding:0; list-style:none; }
+a { color:#0b5cff; text-decoration:none; }
+a:hover { color:#0847c4; }
+img { -webkit-user-drag:none; }
+
+/* ---------- etkileşim & erişilebilirlik ---------- */
+button { font-family:inherit; }
+a, button { -webkit-tap-highlight-color:rgba(11,92,255,.12); }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline:2px solid #0b5cff; outline-offset:3px; border-radius:12px; }
+::selection { background:rgba(11,92,255,.16); color:#0a1424; }
+
+/* ---------- scroll reveal ---------- */
+.reveal { opacity:0; transform:translateY(38px);
+  transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+.reveal.in, .reveal.is-in { opacity:1; transform:none; }
+
+/* ---------- ortak keyframe'ler ---------- */
+@keyframes bssBlink { from{opacity:1} to{opacity:.3} }
+@keyframes bssTimer { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+@keyframes labTimer { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+@keyframes megaIn   { from{opacity:0;transform:translate(-50%,-8px)} to{opacity:1;transform:translate(-50%,0)} }
+@keyframes megaItem { from{opacity:0;transform:translateY(9px)} to{opacity:1;transform:none} }
+@keyframes heroIn   { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} }
+@keyframes heroCaret{ 0%,55%{opacity:.85} 56%,100%{opacity:0} }
+@keyframes nodeIn   { from{opacity:0;transform:translate(-50%,-50%) scale(.9)} to{opacity:1;transform:translate(-50%,-50%) scale(1)} }
+@keyframes auroraDrift { 0%{transform:translate(-8%,-4%) rotate(0deg) scale(1.1)}
+  50%{transform:translate(8%,4%) rotate(14deg) scale(1.25)}
+  100%{transform:translate(-8%,-4%) rotate(0deg) scale(1.1)} }
+
+/* ---------- hero giriş ---------- */
+.hero-in   { animation:heroIn .82s cubic-bezier(.16,1,.3,1) both; }
+.hero-in-2 { animation-delay:.1s; }
+.hero-in-3 { animation-delay:.2s; }
+
+/* ---------- kart eğimi ---------- */
+.tilt { transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);
+  transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s cubic-bezier(.16,1,.3,1); }
+
+/* ---------- mega menü ---------- */
+.mega-panel   { animation:megaIn .34s cubic-bezier(.16,1,.3,1) both; }
+.mega-panel a { animation:megaItem .4s cubic-bezier(.16,1,.3,1) both; }
+.mega-panel a svg, [data-mnav-panel] a svg { stroke-width:1.7; }
+[data-mnav-panel] > * { flex:none !important; }
+
+/* ---------- menü ikonları (24×24 viewBox korunur, currentColor ile boyanır) ---------- */
+.mi { display:inline-block; width:18px; height:18px; background-color:currentColor;
+  mask-repeat:no-repeat; -webkit-mask-repeat:no-repeat;
+  mask-position:center; -webkit-mask-position:center;
+  mask-size:18px 18px; -webkit-mask-size:18px 18px; }
+.mi-modules-functions{mask-image:url('icons/modules-functions.svg');-webkit-mask-image:url('icons/modules-functions.svg')}
+.mi-scalability-governance{mask-image:url('icons/scalability-governance.svg');-webkit-mask-image:url('icons/scalability-governance.svg')}
+.mi-executive-dashboard{mask-image:url('icons/executive-dashboard.svg');-webkit-mask-image:url('icons/executive-dashboard.svg')}
+.mi-mobile-barcode{mask-image:url('icons/mobile-barcode.svg');-webkit-mask-image:url('icons/mobile-barcode.svg')}
+.mi-security-compliance{mask-image:url('icons/security-compliance.svg');-webkit-mask-image:url('icons/security-compliance.svg')}
+.mi-product-tree{mask-image:url('icons/product-tree.svg');-webkit-mask-image:url('icons/product-tree.svg')}
+.mi-actual-forecast-cost{mask-image:url('icons/actual-forecast-cost.svg');-webkit-mask-image:url('icons/actual-forecast-cost.svg')}
+.mi-automation-systems{mask-image:url('icons/automation-systems.svg');-webkit-mask-image:url('icons/automation-systems.svg')}
+.mi-gxp-validation{mask-image:url('icons/gxp-validation.svg');-webkit-mask-image:url('icons/gxp-validation.svg')}
+.mi-mes-production-execution{mask-image:url('icons/mes-production-execution.svg');-webkit-mask-image:url('icons/mes-production-execution.svg')}
+.mi-mrp-planning{mask-image:url('icons/mrp-planning.svg');-webkit-mask-image:url('icons/mrp-planning.svg')}
+.mi-erp-enterprise-planning{mask-image:url('icons/erp-enterprise-planning.svg');-webkit-mask-image:url('icons/erp-enterprise-planning.svg')}
+.mi-production-automation{mask-image:url('icons/production-automation.svg');-webkit-mask-image:url('icons/production-automation.svg')}
+.mi-cloud-server{mask-image:url('icons/cloud-server.svg');-webkit-mask-image:url('icons/cloud-server.svg')}
+.mi-ai-finance-reporting{mask-image:url('icons/ai-finance-reporting.svg');-webkit-mask-image:url('icons/ai-finance-reporting.svg')}
+.mi-industry-specific-solutions{mask-image:url('icons/industry-specific-solutions.svg');-webkit-mask-image:url('icons/industry-specific-solutions.svg')}
+.mi-production-planning{mask-image:url('icons/production-planning.svg');-webkit-mask-image:url('icons/production-planning.svg')}
+.mi-procurement-scm{mask-image:url('icons/procurement-scm.svg');-webkit-mask-image:url('icons/procurement-scm.svg')}
+.mi-wms-warehouse{mask-image:url('icons/wms-warehouse.svg');-webkit-mask-image:url('icons/wms-warehouse.svg')}
+.mi-product-traceability{mask-image:url('icons/product-traceability.svg');-webkit-mask-image:url('icons/product-traceability.svg')}
+.mi-quality{mask-image:url('icons/quality.svg');-webkit-mask-image:url('icons/quality.svg')}
+.mi-about-us{mask-image:url('icons/about-us.svg');-webkit-mask-image:url('icons/about-us.svg')}
+.mi-resources{mask-image:url('icons/resources.svg');-webkit-mask-image:url('icons/resources.svg')}
+.mi-contact-us{mask-image:url('icons/contact-us.svg');-webkit-mask-image:url('icons/contact-us.svg')}
+
+/* ---------- referans logo şeridi ---------- */
+.ref-cell { position:relative; display:grid; place-items:center;
+  width:clamp(146px,13.5vw,186px); height:88px; padding:12px 22px; }
+.ref-cell::after { content:""; position:absolute; right:0; top:22%; bottom:22%; width:1px; background:rgba(13,27,46,.08); }
+.ref-logo { width:100%; height:100%; object-fit:contain; mix-blend-mode:multiply;
+  filter:grayscale(1) contrast(1.08); opacity:.58;
+  transition:filter .5s cubic-bezier(.16,1,.3,1), opacity .5s cubic-bezier(.16,1,.3,1), transform .5s cubic-bezier(.16,1,.3,1); }
+.ref-cell:hover .ref-logo { filter:none; opacity:1; transform:scale(1.05); }
+.ref-rail [data-marquee] { cursor:grab;
+  mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent); }
+.ref-rail [data-marquee].is-drag { cursor:grabbing; }
+.ref-rail [data-marquee].is-drag .ref-logo { transition:none; }
+.ref-rail [data-hz-rail] { mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent); }
+.ref-rail:hover [data-hz-rail] > div { animation-play-state:paused; }
+
+/* ---------- ana sayfa atom görseli ---------- */
+.bss-atom-wrap { position:absolute; top:50%; right:clamp(24px,5vw,80px);
+  width:min(40vw,520px); aspect-ratio:666/781; transform:translateY(-50%); z-index:2; }
+
+/* ---------- modül sistemi (Platform · Modüller) ---------- */
+.mod-sec .mod-fade { opacity:0; transform:translateY(14px);
+  transition:opacity .62s cubic-bezier(.16,1,.3,1), transform .62s cubic-bezier(.16,1,.3,1); }
+.mod-sec.is-in .mod-fade { opacity:1; transform:none; }
+.mod-core { opacity:0; transform:translate(-50%,-50%) scale(.96);
+  transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+.mod-sec.is-in .mod-core { opacity:1; transform:translate(-50%,-50%) scale(1); }
+.mod-svg { opacity:0; transition:opacity .9s ease .18s; }
+.mod-sec.is-in .mod-svg { opacity:1; }
+.mod-card { opacity:0; transform:translate(-50%,-50%) scale(.97);
+  transition:opacity .48s cubic-bezier(.16,1,.3,1), transform .48s cubic-bezier(.16,1,.3,1),
+             border-color .4s ease, box-shadow .4s ease, color .4s ease; }
+.mod-sec.is-in .mod-card { opacity:1; transform:translate(-50%,-50%) scale(1); }
+.mod-card:hover { border-color:rgba(11,92,255,.34); }
+.mod-stage { touch-action:pan-y; cursor:grab; }
+.mod-stage.is-drag { cursor:grabbing; }
+.mod-nav { display:flex; gap:2px; overflow-x:auto; scrollbar-width:none; }
+.mod-nav::-webkit-scrollbar { display:none; }
+@keyframes modPulseA { from{stroke-dashoffset:100} to{stroke-dashoffset:0} }
+@keyframes modPulseB { from{stroke-dashoffset:100} to{stroke-dashoffset:0} }
+@keyframes modBeatA { 0%{transform:scale(1);opacity:.5} 40%{transform:scale(1.045);opacity:.85} 100%{transform:scale(1);opacity:.5} }
+@keyframes modBeatB { 0%{transform:scale(1);opacity:.5} 40%{transform:scale(1.045);opacity:.85} 100%{transform:scale(1);opacity:.5} }
+@keyframes modSwapA { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
+@keyframes modSwapB { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
+
+/* ---------- kırılımlar ---------- */
+@media (max-width:1080px){
+  [data-desktop-nav]{ display:none !important; }
+  [data-desktop-cta]{ display:none !important; }
+  header [data-desktop-cta-wrap]{ display:none !important; }
+  [data-mnav-btn]{ display:inline-flex !important; margin-left:auto; }
+}
+@media (min-width:1081px){
+  [data-mnav-btn], [data-mnav-panel]{ display:none !important; }
+}
+@media (max-width:980px){
+  .mod-grid{ grid-template-columns:minmax(0,1fr) !important; }
+  .mod-stage{ aspect-ratio:auto !important; height:auto !important; padding-bottom:8px; }
+  .mod-svg{ display:none !important; }
+  .mod-core{ position:relative !important; left:auto !important; top:auto !important;
+    width:auto !important; height:auto !important; transform:none !important;
+    border-radius:20px !important; aspect-ratio:auto !important; padding:22px 20px !important; }
+  .mod-sec.is-in .mod-core{ transform:none !important; }
+  .mod-rail{ position:relative !important; inset:auto !important; display:flex !important;
+    gap:10px; margin-top:16px; overflow-x:auto; scrollbar-width:none; padding-bottom:4px; }
+  .mod-rail::-webkit-scrollbar{ display:none; }
+  .mod-card{ position:relative !important; left:auto !important; top:auto !important;
+    transform:none !important; flex:none; }
+  .mod-sec.is-in .mod-card{ transform:none !important; }
+}
+@media (max-width:900px){
+  .gxp-hero-media{ position:static; transform:none; width:100%; margin-top:24px; pointer-events:auto; }
+  .gxp-hero-media img{ mask-image:none; -webkit-mask-image:none; }
+  .bss-atom-wrap{ position:relative; top:auto; right:auto; width:min(74vw,340px); margin:8px auto 0; transform:none; }
+}
+@media (max-width:600px){
+  html{ -webkit-text-size-adjust:100%; }
+  body{ overflow-x:hidden; }
+  section, footer{ padding-block:56px !important; }
+  [style*="max-width:1240px"],[style*="max-width:1320px"],[style*="max-width:1180px"]{ max-width:100% !important; padding-inline:18px !important; }
+  [style*="grid-template-columns"]{ grid-template-columns:1fr !important; }
+  [style*="min-height:100vh"],[style*="min-height:92vh"],[style*="min-height:88vh"],[style*="height:100vh"]{ min-height:auto !important; height:auto !important; }
+  section[style*="100vh"]{ padding-top:112px !important; padding-bottom:56px !important; }
+  h1{ font-size:clamp(28px,8.4vw,38px) !important; line-height:1.1 !important; letter-spacing:-.03em !important; }
+  h2{ font-size:clamp(22px,6.6vw,30px) !important; line-height:1.14 !important; }
+  h3{ font-size:19px !important; }
+  [style*="position:sticky"]{ position:static !important; }
+  [data-df-stage],[data-scrub-stage],[data-era-stage]{ height:auto !important; min-height:auto !important; display:block !important; }
+  [data-df-panel],[data-scrub-panel],[data-era-panel],[data-panel]{ position:static !important; opacity:1 !important; transform:none !important; margin-bottom:22px !important; }
+  [style*="aspect-ratio"]{ aspect-ratio:auto !important; }
+  figure, img{ max-width:100% !important; }
+  a[style*="height:36px"],a[style*="height:38px"],a[style*="height:40px"],a[style*="height:42px"],a[style*="height:46px"],a[style*="height:48px"],
+  button[style*="height:36px"],button[style*="height:38px"],button[style*="height:40px"],button[style*="height:42px"]{ height:46px !important; }
+  .mega-panel{ display:none !important; }
+  [data-scroll-x]{ overflow-x:auto !important; -webkit-overflow-scrolling:touch; }
+
+  /* sektör kart ızgarası: sabit 250px satırlar tek kolonda çöküyordu */
+  [style*="grid-template-rows:repeat(3,250px)"]{ grid-template-rows:auto !important; }
+  [style*="grid-row"][style*="span 3"]{ grid-row:auto !important; }
+  [style*="grid-row:span 3"]{ grid-row:auto !important; }
+  [style*="grid-template-rows"][style*="250px"]{ grid-template-rows:auto !important; }
+  [style*="grid-template-rows"][style*="250px"] > *{ min-height:300px !important; }
+
+  /* footer ve metin bağlantıları: dokunma hedefi */
+  footer a{ display:inline-flex !important; align-items:center; min-height:40px; }
+  footer li{ display:flex; }
+
+}
+
+/* ---------- hareket azaltma ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  .reveal{ opacity:1 !important; transform:none !important; }
+  .hero-in{ animation:none; }
+  [data-spin]{ animation:none !important; }
+  .mod-sec *{ animation:none !important; }
+  .mod-sec .mod-fade, .mod-sec .mod-core, .mod-sec .mod-card, .mod-sec .mod-svg{
+    opacity:1 !important; transform:none !important; transition:none !important; }
+}
+
+/* ---------- cam yüzey optimizasyonu (görünüm korunur) ---------- */
+@media (max-width:600px){
+  /* telefon GPU'sunda geniş blur pahalı; 30/18px yerine 12px görsel olarak aynı okunur */
+  [style*="backdrop-filter"]{ backdrop-filter:blur(12px) !important; -webkit-backdrop-filter:blur(12px) !important; }
+}
+/* Not: `prefers-reduced-transparency` için blanket kural KONMAZ.
+   Cam yüzeyler markanın tasarım dili; kapatılmaz. Saydamlık maliyeti
+   telefonda blur'u 12px'e indiren yukarıdaki kuralla zaten yönetiliyor. */

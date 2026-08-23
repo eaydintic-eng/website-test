@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Modüller ve İşlevleri — BSS Platform</title>
+<meta name="description" content="WinPremium'un modülleri ayrı ekranlar değil, tek bir operasyon zincirinin parçalarıdır. Bir düğümün üzerine gelin — sistemdeki bağlarını görün.">
+<meta property="og:title" content="Modüller ve İşlevleri — BSS Platform">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#dfeeff">
+<link rel="icon" type="image/svg+xml" href="brand/logo/bss-mark-primary.svg" />
+
+<link rel="stylesheet" href="bss.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script src="_ds/bssweb-design-system-e840475c-38e0-46cf-80fb-1224d8960e0b/_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.min.js" defer></script>
+<style>
+  @keyframes ringPulse{0%{transform:translate(-50%,-50%) scale(.9);opacity:.7}70%,100%{transform:translate(-50%,-50%) scale(1.7);opacity:0}}
+  /* ===== MODÜL SİSTEMİ ===== */
+  .mod-sec .mod-fade{opacity:0;transform:translateY(14px);transition:opacity .62s cubic-bezier(.16,1,.3,1),transform .62s cubic-bezier(.16,1,.3,1);}
+</style>
+<script src="reveal-boot.js"></script>
+<script src="mobile-layer.js"></script>
+</helmet>
+
+<div style="position:relative;isolation:isolate;background:#dfeeff;">
+  <div aria-hidden="true" data-page-bg="" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;background-image:linear-gradient(168deg,rgba(11,92,255,.26) 0%,rgba(56,132,255,.12) 22%,rgba(255,255,255,0.1) 44%,rgba(23,148,184,.13) 68%,rgba(11,92,255,.28) 100%),url('brand/backgrounds/page-flow-light.webp');background-repeat:no-repeat;background-position:top center;background-size:100% 100%;"></div>
+
+  <!-- HEADER -->
+  <header style="position:fixed;top:0;left:0;right:0;z-index:100;padding-top:14px;pointer-events:none;">
+    <div style="width:100%;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div style="pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;height:58px;padding:0 12px 0 18px;border:1px solid rgba(13,27,46,0.1);border-radius:999px;background:rgba(255,255,255,0.62);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px) saturate(150%);box-shadow:0 12px 40px rgba(13,27,46,0.1),inset 0 1px 0 rgba(13,27,46,0.06);">
+        <a href="index.html" style="display:inline-flex;align-items:center;gap:11px;">
+          <img src="brand/logo/bss-logo-primary.svg" alt="BSS Technology" width="804" height="306" decoding="async" style="display:block;height:42px;width:auto;">
+        </a>
+        <span style="display:flex;align-items:center;gap:9px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#55637a;">
+          <a href="index.html" style="color:#55637a;">PLATFORM</a><span style="opacity:.5;">/</span><span style="color:#0a1424;">MODÜLLER</span>
+        </span>
+        <a href="#iletisim" style="display:inline-flex;align-items:center;height:38px;padding:0 18px;border-radius:999px;background:linear-gradient(180deg,#0b5cff,#0b5cff);color:#fff;font-size:14px;font-weight:600;white-space:nowrap;box-shadow:0 0 24px rgba(11,92,255,0.14),inset 0 1px 0 rgba(13,27,46,0.12);">Demo Talep Edin</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO: MODÜL SİSTEMİ -->
+  <section class="mod-sec" data-mod-sec="" data-screen-label="Modüller hero" style="position:relative;overflow:hidden;padding:132px 0 96px;background:#fcfdff;">
+    <span aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(44% 46% at 22% 14%,rgba(11,92,255,.08),transparent 70%),radial-gradient(40% 44% at 84% 26%,rgba(23,148,184,.06),transparent 72%),radial-gradient(56% 38% at 46% 104%,rgba(11,92,255,.05),transparent 74%);"></span>
+
+    <div style="position:relative;z-index:1;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div class="mod-fade" style="max-width:62ch;">
+        <p style="display:inline-flex;align-items:center;gap:9px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;color:#0847c4;"><span style="width:22px;height:1px;background:#0b5cff;"></span>PLATFORM · 01 — MODÜLLER VE İŞLEVLERİ</p>
+        <h1 style="max-width:17ch;margin:16px 0 0;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:clamp(30px,3.6vw,50px);font-weight:600;line-height:1.08;letter-spacing:-.038em;color:#0a1424;">Bir fabrikada hiçbir işlem <span style="padding-bottom:.14em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">yalnız çalışmaz.</span></h1>
+        <p style="max-width:54ch;margin:20px 0 0;font-size:17px;line-height:1.62;color:#4c5a70;">WinPremium'un modülleri ayrı ekranlar değil, tek bir operasyon zincirinin parçalarıdır. Bir modül seçin — çekirdekle bağını ve gerçek işlevini görün.</p>
+      </div>
+
+      <!-- ÜST MODÜL NAVİGASYONU -->
+      <nav class="mod-nav mod-fade" aria-label="Modüller" style="margin-top:clamp(28px,4vw,44px);border-bottom:1px solid rgba(13,27,46,.08);transition-delay:.06s;">
+        <sc-for list="{{ nav }}" as="n" hint-placeholder-count="10">
+          <button type="button" onClick="{{ n.select }}" aria-pressed="{{ n.on }}" style="position:relative;flex:none;display:inline-flex;align-items:center;gap:9px;padding:12px 15px 14px;border:0;background:transparent;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;cursor:pointer;color:{{ n.color }};transition:color .35s ease;">
+            <span style="font-size:11px;font-weight:600;letter-spacing:.1em;font-variant-numeric:tabular-nums;opacity:.72;">{{ n.num }}</span>
+            <span style="font-size:14px;font-weight:{{ n.weight }};letter-spacing:-.01em;white-space:nowrap;">{{ n.label }}</span>
+            <span aria-hidden="true" style="position:absolute;left:12px;right:12px;bottom:-1px;height:2px;border-radius:2px;background:#0b5cff;transform:scaleX({{ n.bar }});transform-origin:left;transition:transform .45s cubic-bezier(.16,1,.3,1);"></span>
+          </button>
+        </sc-for>
+      </nav>
+
+      <div class="mod-grid" style="display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:clamp(20px,3vw,40px);align-items:center;margin-top:clamp(24px,3vw,40px);">
+
+        <!-- SOL: ÜRETİM ÇEKİRDEĞİ -->
+        <div class="mod-stage" data-mod-stage="" style="position:relative;width:100%;aspect-ratio:1/.92;">
+          <svg class="mod-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;">
+            <sc-for list="{{ modules }}" as="m" hint-placeholder-count="10">
+              <line x1="50" y1="50" x2="{{ m.x }}" y2="{{ m.y }}" stroke="{{ m.stroke }}" stroke-width="{{ m.sw }}" stroke-linecap="round" vector-effect="non-scaling-stroke" style="transition:stroke .45s ease,stroke-width .45s ease;"></line>
+            </sc-for>
+            <line x1="50" y1="50" x2="{{ pulseX }}" y2="{{ pulseY }}" stroke="#0b5cff" stroke-width="2.4" stroke-linecap="round" vector-effect="non-scaling-stroke" pathLength="100" stroke-dasharray="16 84" style="animation:{{ pulseAnim }} .62s cubic-bezier(.32,0,.2,1) both;"></line>
+          </svg>
+
+          <div class="mod-core" style="position:absolute;left:50%;top:50%;width:38%;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(11,92,255,.14);background:radial-gradient(circle at 50% 34%,rgba(255,255,255,.96),rgba(233,241,255,.82));box-shadow:0 24px 60px -34px rgba(9,38,84,.34),inset 0 1px 0 rgba(255,255,255,.9);">
+            <span aria-hidden="true" style="position:absolute;inset:-7%;border-radius:50%;border:1px solid rgba(11,92,255,.09);animation:{{ beatAnim }} .55s cubic-bezier(.32,0,.2,1) both;"></span>
+            <span aria-hidden="true" style="position:absolute;inset:-15%;border-radius:50%;border:1px solid rgba(11,92,255,.05);"></span>
+            <span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;color:#0847c4;">ÇEKİRDEK</span>
+            <span style="margin-top:7px;max-width:80%;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:clamp(16px,1.9vw,23px);font-weight:600;letter-spacing:-.028em;line-height:1.14;text-align:center;color:#0a1424;">Üretim Çekirdeği</span>
+            <span style="margin-top:8px;max-width:74%;font-size:12px;line-height:1.5;text-align:center;color:#55637a;">Bağlı operasyonun merkezi</span>
+          </div>
+
+          <div class="mod-rail">
+            <sc-for list="{{ modules }}" as="m" hint-placeholder-count="10">
+              <button type="button" class="mod-card" onClick="{{ m.select }}" aria-pressed="{{ m.on }}" style="left:{{ m.x }}%;top:{{ m.y }}%;position:absolute;z-index:3;display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid {{ m.border }};border-radius:14px;background:{{ m.bg }};box-shadow:{{ m.shadow }};font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;text-align:left;white-space:nowrap;cursor:pointer;transition-delay:{{ m.delay }};">
+                <i data-lucide="{{ m.icon }}" style="width:17px;height:17px;flex:none;color:{{ m.iconColor }};"></i>
+                <span style="display:flex;flex-direction:column;gap:2px;">
+                  <span style="font-size:10.5px;font-weight:600;letter-spacing:.1em;font-variant-numeric:tabular-nums;color:{{ m.numColor }};">{{ m.num }}</span>
+                  <span style="font-size:13px;font-weight:600;letter-spacing:-.012em;color:{{ m.labelColor }};">{{ m.label }}</span>
+                </span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- SAĞ: AKTİF MODÜL DETAYI -->
+        <aside class="mod-fade" style="position:relative;border:1px solid rgba(13,27,46,.08);border-radius:20px;background:#ffffff;box-shadow:0 26px 60px -40px rgba(9,38,84,.3);padding:clamp(22px,2.4vw,32px);transition-delay:.12s;">
+          <div style="animation:{{ swapAnim }} .46s cubic-bezier(.16,1,.3,1) both;">
+            <p style="display:inline-flex;align-items:center;height:26px;padding:0 11px;border-radius:999px;background:rgba(11,92,255,.08);font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;color:#0847c4;">AKTİF MODÜL</p>
+            <h2 style="margin:16px 0 0;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:clamp(26px,2.5vw,34px);font-weight:600;letter-spacing:-.032em;line-height:1.1;color:#0a1424;">{{ sel.label }}</h2>
+            <p style="margin:12px 0 0;max-width:44ch;font-size:15px;line-height:1.6;color:#4c5a70;">{{ sel.desc }}</p>
+
+            <ul style="display:flex;flex-direction:column;gap:13px;margin-top:22px;">
+              <sc-for list="{{ sel.caps }}" as="c" hint-placeholder-count="3">
+                <li style="display:flex;gap:11px;">
+                  <span style="flex:none;display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;margin-top:1px;border-radius:50%;background:rgba(11,92,255,.1);color:#0b5cff;"><i data-lucide="check" style="width:12px;height:12px;"></i></span>
+                  <span style="font-size:14px;line-height:1.55;color:#4c5a70;"><b style="font-weight:600;color:#0a1424;">{{ c.t }}:</b> {{ c.d }}</span>
+                </li>
+              </sc-for>
+            </ul>
+
+            <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:24px;border:1px solid rgba(13,27,46,.08);border-radius:14px;background:rgba(13,27,46,.07);overflow:hidden;">
+              <sc-for list="{{ sel.metrics }}" as="k" hint-placeholder-count="3">
+                <div style="padding:14px 13px;background:#fcfdff;">
+                  <p style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;font-weight:600;letter-spacing:.06em;color:#55637a;">{{ k.k }}</p>
+                  <p style="margin-top:7px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:15px;font-weight:600;letter-spacing:-.015em;color:#0b5cff;">{{ k.v }}</p>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          
+        </aside>
+      </div>
+
+      <p class="mod-fade" style="margin-top:22px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.12em;color:#55637a;transition-delay:.18s;">10 MODÜL · 1 OPERASYON ÇEKİRDEĞİ · SÜRÜKLEYEREK GEZİNİN</p>
+    </div>
+  </section>
+
+  <!-- ORDER CHAIN -->
+  <section data-screen-label="Sipariş zinciri" style="position:relative;z-index:1;overflow:hidden;padding-block:112px;">
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;">
+      <span data-aurora-a="" style="position:absolute;left:-10%;top:-30%;width:56vw;height:56vw;border-radius:50%;background:conic-gradient(from 120deg,#0b5cff,#e3f0f7,#1794b8,#0b5cff);filter:blur(110px);opacity:.16;mix-blend-mode:multiply;animation:auroraDrift 28s ease-in-out infinite;"></span>
+    </div>
+    <div style="position:relative;z-index:2;max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div class="reveal" style="max-width:52rem;">
+        <p style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0f6f85;"><span style="width:22px;height:1px;background:#1794b8;"></span>VERİ AKIŞI</p>
+        <h2 style="margin-top:16px;font-size:clamp(26px,3.2vw,42px);line-height:1.12;color:#0a1424;">Bir sipariş geldiğinde <span style="display:inline-block;padding-bottom:.16em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;;line-height:1.14">nereleri etkiler?</span></h2>
+        <p style="max-width:56ch;margin-top:14px;color:#4c5a70;font-size:16px;line-height:1.6;">Tek bir kayıt, zincir boyunca ilerledikçe her modülde karşılığını oluşturur. Aynı veri; planı, malzemeyi, üretimi, stoğu ve defteri sırayla günceller.</p>
+      </div>
+
+      <div style="position:relative;margin-top:56px;">
+        <div style="position:absolute;left:0;right:0;top:27px;height:2px;background:rgba(13,27,46,0.09);"></div>
+        <div data-chain-fill="" style="position:absolute;left:0;top:27px;height:2px;width:0%;background:linear-gradient(90deg,#0b5cff,#1794b8);box-shadow:0 0 12px rgba(23,148,184,0.14);"></div>
+        <ol style="position:relative;display:grid;grid-template-columns:repeat(7,1fr);gap:12px;">
+          <sc-for list="{{ chain }}" as="c" hint-placeholder-count="7">
+            <li class="reveal" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;">
+              <span style="position:relative;z-index:2;display:inline-flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:16px;color:#0b5cff;background:linear-gradient(150deg,rgba(255,255,255,.8),rgba(255,255,255,.6));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.7);box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 10px 22px -14px rgba(9,38,84,.3);"><i data-lucide="{{ c.icon }}" style="width:22px;height:22px;"></i></span>
+              <span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.06em;color:#55637a;">{{ c.step }}</span>
+              <span style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:14px;font-weight:600;color:#0a1424;line-height:1.2;">{{ c.label }}</span>
+              <span style="font-size:12px;line-height:1.45;color:#4c5a70;">{{ c.micro }}</span>
+            </li>
+          </sc-for>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULE GRID -->
+  <section data-screen-label="Modül dizini" style="position:relative;z-index:1;padding-block:112px;">
+    <div style="max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:end;margin-bottom:48px;">
+        <div>
+          <p style="display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0847c4;"><span style="width:22px;height:1px;background:#0b5cff;"></span>MODÜL DİZİNİ</p>
+          <h2 style="margin-top:16px;font-size:clamp(26px,3.2vw,42px);line-height:1.06;color:#0a1424;">Her modül, kendi işini yapar; hepsi aynı kaydı paylaşır.</h2>
+        </div>
+        <p style="color:#4c5a70;line-height:1.7;font-size:15px;">WinPremium içindeki başlıca modüller ve gerçek işlevleri. Bir modüldeki hareket, ilgili modüllerde otomatik karşılığını bulur — çift kayıt yoktur.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;">
+        <sc-for list="{{ grid }}" as="g" hint-placeholder-count="9">
+          <article class="reveal" style-hover="box-shadow:0 20px 46px -20px rgba(13,27,46,.28);border-color:rgba(11,92,255,.22);" style="position:relative;overflow:hidden;padding:22px;border-radius:20px;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+            <span style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(13,27,46,0.12),transparent);"></span>
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;border:1px solid rgba(11,92,255,0.16);background:rgba(11,92,255,0.12);color:#0b5cff;"><i data-lucide="{{ g.icon }}" style="width:21px;height:21px;"></i></span>
+            <h3 style="margin-top:16px;font-size:17px;font-weight:600;letter-spacing:-.01em;color:#0a1424;">{{ g.title }}</h3>
+            <p style="margin-top:8px;font-size:13px;line-height:1.5;color:#4c5a70;">{{ g.desc }}</p>
+            <ul style="display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;">
+              <sc-for list="{{ g.tags }}" as="t" hint-placeholder-count="4">
+                <li style="padding:5px 9px;border:1px solid rgba(13,27,46,0.1);border-radius:999px;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;color:#4c5a70;">{{ t }}</li>
+              </sc-for>
+            </ul>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEXTUAL TRANSITION -->
+  <section id="iletisim" data-screen-label="Sonraki" style="position:relative;z-index:1;overflow:hidden;padding-block:112px;">
+    <div style="max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <a href="platform-olceklenebilirlik.html" class="reveal" style="position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;overflow:hidden;padding:clamp(28px,4vw,44px);border-radius:20px;color:#0a1424;background:linear-gradient(152deg,rgba(255,255,255,.72),rgba(255,255,255,.5));backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,.62);box-shadow:0 1px 0 rgba(255,255,255,.75) inset,0 24px 52px -30px rgba(9,38,84,.38);">
+        <span style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#1794b8,#0b5cff,transparent 75%);"></span>
+        <div style="position:relative;">
+          <p style="font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#0f6f85;">SONRAKİ · 02 — ÖLÇEKLENEBİLİRLİK VE YÖNETİM</p>
+          <h2 style="max-width:22ch;margin-top:14px;font-size:clamp(24px,3vw,40px);line-height:1.12;">Bağlı bir sistem, çok katmana <span style="display:inline-block;padding-bottom:.16em;background:linear-gradient(96deg,#0b5cff,#1794b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;;line-height:1.14">ölçeklenir.</span></h2>
+        </div>
+        <span style="position:relative;display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;border:1px solid rgba(13,27,46,0.12);background:rgba(13,27,46,0.05);font-size:15px;font-weight:600;white-space:nowrap;">Devam edin<i data-lucide="arrow-right" style="width:18px;height:18px;"></i></span>
+      </a>
+      <p style="margin-top:32px;text-align:center;font-family:'Inter Tight',-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif;font-size:12px;color:#55637a;"><a href="index.html" style="color:#55637a;">← Ana sayfaya dön</a></p>
+    </div>
+  </section>
+
+  <footer style="position:relative;z-index:1;padding-block:88px 40px;border-top:1px solid rgba(13,27,46,.07);">
+    <div style="max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,3vw,32px);">
+      <div style="display:grid;grid-template-columns:minmax(0,1.1fr) repeat(4,minmax(0,1fr));gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(13,27,46,.08);">
+        <div>
+          <a href="index.html" style="display:inline-flex;align-items:center;gap:11px;">
+            <img src="brand/logo/bss-logo-primary.svg" alt="BSS Technology" width="804" height="306" decoding="async" style="display:block;height:42px;width:auto;">
+          </a>
+          <p style="max-width:30ch;margin-top:18px;font-size:14px;line-height:1.6;color:#4c5a70;">Üretim bilgisini teknolojiye dönüştürüyoruz.</p>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">PLATFORM</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="#top" style="font-size:14px;color:#4c5a70;">Modüller</a></li>
+            <li><a href="platform-urun-agaci.html" style="font-size:14px;color:#4c5a70;">Ürün ağacı</a></li>
+            <li><a href="platform-maliyet.html" style="font-size:14px;color:#4c5a70;">Maliyet</a></li>
+            <li><a href="platform-otomasyon.html" style="font-size:14px;color:#4c5a70;">Otomasyon</a></li>
+            <li><a href="platform-mobil-barkod.html" style="font-size:14px;color:#4c5a70;">Mobil barkod</a></li>
+            <li><a href="platform-yonetici-dashboard.html" style="font-size:14px;color:#4c5a70;">Yönetici dashboard</a></li>
+            <li><a href="platform-olceklenebilirlik.html" style="font-size:14px;color:#4c5a70;">Ölçeklenebilirlik</a></li>
+            <li><a href="platform-guvenlik.html" style="font-size:14px;color:#4c5a70;">Güvenlik</a></li>
+            <li><a href="platform-gxp.html" style="font-size:14px;color:#4c5a70;">GxP</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">ÇÖZÜMLER</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="cozum-erp.html" style="font-size:14px;color:#4c5a70;">ERP</a></li>
+            <li><a href="cozum-mes.html" style="font-size:14px;color:#4c5a70;">MES</a></li>
+            <li><a href="cozum-mrp.html" style="font-size:14px;color:#4c5a70;">MRP</a></li>
+            <li><a href="cozum-otomasyon.html" style="font-size:14px;color:#4c5a70;">Otomasyon</a></li>
+            <li><a href="cozum-bulut-sunucu.html" style="font-size:14px;color:#4c5a70;">Bulut sunucu</a></li>
+            <li><a href="cozum-sektore-ozel.html" style="font-size:14px;color:#4c5a70;">Sektöre özel</a></li>
+            <li><a href="cozum-sektore-gore.html" style="font-size:14px;color:#4c5a70;">Sektöre göre</a></li>
+            <li><a href="cozum-yz-finansal-analiz.html" style="font-size:14px;color:#4c5a70;">YZ finansal analiz</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">KULLANIM</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="kullanim-uretim-planlama.html" style="font-size:14px;color:#4c5a70;">Üretim planlama</a></li>
+            <li><a href="kullanim-izlenebilirlik.html" style="font-size:14px;color:#4c5a70;">İzlenebilirlik</a></li>
+            <li><a href="kullanim-kalite.html" style="font-size:14px;color:#4c5a70;">Kalite</a></li>
+            <li><a href="kullanim-wms.html" style="font-size:14px;color:#4c5a70;">WMS</a></li>
+            <li><a href="kullanim-scm.html" style="font-size:14px;color:#4c5a70;">SCM</a></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#55637a;">ŞİRKET</p>
+          <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+            <li><a href="sirket-hakkimizda.html" style="font-size:14px;color:#4c5a70;">Hakkımızda</a></li>
+            <li><a href="sirket-kaynaklar.html" style="font-size:14px;color:#4c5a70;">Kaynaklar</a></li>
+            <li><a href="sirket-iletisim.html" style="font-size:14px;color:#4c5a70;">İletişim</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:24px;">
+        <p style="font-size:12px;color:#55637a;">© 2026 BSS Technology · WinPremium</p>
+        <a href="sirket-iletisim.html" style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:999px;background:#0b5cff;color:#fff;font-size:14px;font-weight:600;">Demo Talep Edin</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+const MODULES = [
+  { label:"Satış", icon:"receipt-text",
+    desc:"Sipariş sisteme buradan girer; zincirin tetikleyicisidir. Kabul edilen her satır planlamaya olduğu gibi düşer.",
+    caps:[
+      { t:"Sipariş ve teklif", d:"Teklif kabul edildiğinde satış siparişi tekrar yazılmadan oluşur." },
+      { t:"Termin ve izleme", d:"Her satırın üretim ve sevk durumu aynı ekrandan görünür." },
+      { t:"Alıcı ve fiyat kartları", d:"Müşteriye özel fiyat, vade ve iskonto koşulları kayıtlıdır." }],
+    metrics:[{k:"Giriş noktası",v:"Tek ekran"},{k:"Termin görünürlüğü",v:"Satır bazlı"},{k:"Fiyat kontrolü",v:"Kart tanımlı"}] },
+  { label:"Planlama", icon:"calendar-range",
+    desc:"Siparişi iş emrine ve üretim sırasına dönüştürür; talep, kapasite ve kaynağı aynı tabloda dengeler.",
+    caps:[
+      { t:"Sipariş ve kombine plan", d:"Farklı siparişler aynı forma birleştirilerek fire düşürülür." },
+      { t:"İş emri ve sıra", d:"Makine ve vardiya bazında üretim sırası oluşturulur." },
+      { t:"Kapasite dengeleme", d:"Yüklenen kapasite ile mevcut kapasite karşılaştırılır." }],
+    metrics:[{k:"Planlama",v:"Kombine"},{k:"Sıra",v:"Makine bazlı"},{k:"Kapasite",v:"Anlık"}] },
+  { label:"MRP", icon:"git-branch",
+    desc:"Ürün ağacı, stok ve kapasiteden net ihtiyacı hesaplar; eksik olan malzemeyi satın almaya devreder.",
+    caps:[
+      { t:"Net ihtiyaç", d:"Ürün ağacı patlatılır, eldeki stok düşülerek gerçek eksik bulunur." },
+      { t:"Kapasiteyle sınama", d:"İhtiyaç, mevcut makine ve iş gücü kapasitesine göre sınanır." },
+      { t:"Satın almaya devir", d:"Eksik kalemler talep olarak satın alma modülüne aktarılır." }],
+    metrics:[{k:"Hesap",v:"Ürün ağacı"},{k:"Kaynak",v:"Stok + kapasite"},{k:"Çıktı",v:"Talep"}] },
+  { label:"Satın Alma", icon:"shopping-cart",
+    desc:"Eksik malzeme için talep, teklif ve siparişi yürütür; mal kabul ile stok tarafını kapatır.",
+    caps:[
+      { t:"Talep ve teklif", d:"Tedarikçi teklifleri aynı ekranda karşılaştırılır." },
+      { t:"Sipariş takibi", d:"Açık siparişlerin termini ve kalan miktarı izlenir." },
+      { t:"Alış irsaliyesi", d:"Mal kabul kaydı stok hareketini otomatik oluşturur." }],
+    metrics:[{k:"Akış",v:"Talep → İrsaliye"},{k:"Teklif",v:"Karşılaştırmalı"},{k:"Kabul",v:"Stoğa bağlı"}] },
+  { label:"Stok", icon:"boxes",
+    desc:"Depo, bobin ve palet hareketini barkodla kayda alır; tüketim ve giriş anında deftere yansır.",
+    caps:[
+      { t:"Depo ve lokasyon", d:"Her hareket depo, raf ve lokasyon bilgisiyle kaydedilir." },
+      { t:"Bobin ve palet kartı", d:"Bobin ve paletler tekil kart olarak izlenir." },
+      { t:"Barkod hareketi", d:"Sahadaki okutma anında sistem stoğunu günceller." }],
+    metrics:[{k:"Kayıt",v:"Barkodlu"},{k:"İzleme",v:"Bobin / palet"},{k:"Güncelleme",v:"Anlık"}] },
+  { label:"Kalite", icon:"shield-check",
+    desc:"Fire ve kalite kayıtlarını ilgili iş emrine bağlar; kontrol sonucu üretim geçmişinde kalıcı iz bırakır.",
+    caps:[
+      { t:"İş emrine bağlı kontrol", d:"Her kalite kaydı üretildiği iş emriyle ilişkilendirilir." },
+      { t:"Fire ve red", d:"Fire nedeni ve miktarı maliyet tarafına da işlenir." },
+      { t:"Belge ve rapor", d:"Kontrol sonuçları raporlanabilir kayıt olarak saklanır." }],
+    metrics:[{k:"Bağ",v:"İş emri"},{k:"Fire",v:"Nedenli"},{k:"İz",v:"Kalıcı"}] },
+  { label:"Sevkiyat", icon:"truck",
+    desc:"Seferi, aracı ve irsaliyeyi siparişle eşleştirir; hangi paletin hangi araca yüklendiği kayıt altındadır.",
+    caps:[
+      { t:"Sefer ve araç", d:"Sevkiyat seferleri araç ve sürücü bilgisiyle planlanır." },
+      { t:"Satış irsaliyesi", d:"İrsaliye satırları siparişten otomatik gelir." },
+      { t:"Yükleme eşleşmesi", d:"Barkodla yüklenen palet ilgili sipariş satırına bağlanır." }],
+    metrics:[{k:"Plan",v:"Sefer bazlı"},{k:"Belge",v:"Siparişten"},{k:"Yükleme",v:"Barkodlu"}] },
+  { label:"Maliyet", icon:"chart-pie",
+    desc:"Gerçekleşen tüketimi maliyet değişkenlerine yazar; öngörülen ile gerçekleşen aynı ekranda karşılaşır.",
+    caps:[
+      { t:"Maliyet değişkenleri", d:"Sarf, makine ve iş gücü kalemleri ayrı ayrı tanımlanır." },
+      { t:"Gerçekleşen tüketim", d:"Sahadan gelen tüketim doğrudan maliyete işlenir." },
+      { t:"Öngörülen karşılaştırma", d:"Plan ile gerçekleşen sapması iş emri bazında görünür." }],
+    metrics:[{k:"Kalem",v:"Değişken bazlı"},{k:"Kaynak",v:"Saha verisi"},{k:"Karşılaştırma",v:"İş emri"}] },
+  { label:"Finans", icon:"wallet",
+    desc:"Cari, banka ve kasa hareketini deftere işler; sevk edilen mal faturaya, fatura carinin bakiyesine dönüşür.",
+    caps:[
+      { t:"Cari ve ekstre", d:"Müşteri ve tedarikçi bakiyesi hareket bazında izlenir." },
+      { t:"Fatura", d:"İrsaliyeden faturaya geçişte satırlar yeniden yazılmaz." },
+      { t:"Çek ve senet", d:"Vade takibi tahsilat planına bağlı yürütülür." }],
+    metrics:[{k:"Defter",v:"Hareket bazlı"},{k:"Fatura",v:"İrsaliyeden"},{k:"Vade",v:"Planlı"}] },
+  { label:"Yönetim", icon:"layout-dashboard",
+    desc:"Tüm zinciri tek yönetim görüşünde toplar; hangi modülde ne olduğunu tek ekrandan okursunuz.",
+    caps:[
+      { t:"Tek görünüm", d:"Satıştan finansa kadar zincirin durumu bir arada sunulur." },
+      { t:"Rol ve yetki", d:"Kullanıcı, rol ve birim yetkileri tek yerden yönetilir." },
+      { t:"Gösterge panelleri", d:"Yönetim kararı için gereken göstergeler canlı gelir." }],
+    metrics:[{k:"Kapsam",v:"Uçtan uca"},{k:"Yetki",v:"Rol bazlı"},{k:"Gösterge",v:"Canlı"}] },
+];
+
+
+const CHAIN = [
+  { step:"01", label:"Sipariş", icon:"receipt-text", micro:"Satış siparişi kaydı" },
+  { step:"02", label:"Planlama", icon:"calendar-range", micro:"İş emri ve sıra" },
+  { step:"03", label:"MRP", icon:"git-branch", micro:"Net malzeme ihtiyacı" },
+  { step:"04", label:"Üretim", icon:"factory", micro:"İş emri sahada" },
+  { step:"05", label:"Stok", icon:"boxes", micro:"Tüketim ve giriş" },
+  { step:"06", label:"Sevkiyat", icon:"truck", micro:"İrsaliye ve sefer" },
+  { step:"07", label:"Finans", icon:"wallet", micro:"Fatura ve defter" },
+];
+
+const GRID = [
+  { title:"Satış", icon:"receipt-text", desc:"Sipariş, teklif ve izleme; zincirin giriş noktası.", tags:["Satış Siparişleri","Sipariş İzleme","Teklifler","Alıcılar"] },
+  { title:"Planlama", icon:"calendar-range", desc:"Sipariş ve kombine üretim planlaması, iş emirleri.", tags:["Sipariş Üretim Planlama","Kombine","İş Emirleri"] },
+  { title:"Satın Alma", icon:"shopping-cart", desc:"Talepten alış irsaliyesine tedarik süreci.", tags:["Talepler","Teklifler","Siparişler","Alış İrsaliye"] },
+  { title:"Malzeme & Stok", icon:"boxes", desc:"Depo, bobin ve palet hareketleri barkodla izlenir.", tags:["Depo Stok","Bobin Kartları","Barkod Hareketleri","Palet Hareketleri"] },
+  { title:"Üretim", icon:"factory", desc:"İş emri, duruş, fire ve vardiya sahadan kaydedilir.", tags:["Üretim Siparişleri","Duruşlar","Fireler","Vardiyalar"] },
+  { title:"Sevkiyat", icon:"truck", desc:"Sefer, araç ve irsaliye siparişle eşleşir.", tags:["Seferler","Araçlar","Satış İrsaliye"] },
+  { title:"Maliyet", icon:"chart-pie", desc:"Sarf, makine ve değişken maliyet kalemleri.", tags:["Maliyet Değişkenleri","Sarf Fiyatlar","Makine Değerleri"] },
+  { title:"Finans", icon:"wallet", desc:"Cari, banka, kasa hareketleri ve fatura yönetimi.", tags:["Cari Fişler","Faturalar","Ekstreler","Çek / Senet"] },
+  { title:"Yetkilendirme", icon:"key-round", desc:"Kullanıcı, rol ve birim yetkileri tek yerde.", tags:["Kullanıcı Kartları","Rol Kartları","Birim Yetkileri"] },
+];
+
+class Component extends DCLogic {
+  state = { sel: 1, tick: 0 };
+
+  componentDidMount(){ document.documentElement.lang="tr"; this.icons(); this.waitGsap(); this.modBoot(); }
+  componentDidUpdate(){ this.icons(); }
+  componentWillUnmount(){}
+
+  modBoot(){
+    const sec=document.querySelector("[data-mod-sec]");
+    if(!sec){ if((this._mb=(this._mb||0)+1)<40) setTimeout(()=>this.modBoot(),200); return; }
+    if(this._mbDone) return; this._mbDone=true;
+
+    const io=new IntersectionObserver((es)=>{ es.forEach((e)=>{ if(e.isIntersecting){ sec.classList.add("is-in"); io.disconnect(); } }); },{ threshold:.18 });
+    io.observe(sec);
+
+    const stage=sec.querySelector("[data-mod-stage]");
+    if(!stage) return;
+    let sx=0, sy=0, down=false, fired=false;
+    stage.addEventListener("pointerdown",(e)=>{ if(e.button) return; down=true; fired=false; sx=e.clientX; sy=e.clientY; stage.classList.add("is-drag"); });
+    stage.addEventListener("pointermove",(e)=>{
+      if(!down||fired) return;
+      const dx=e.clientX-sx, dy=e.clientY-sy;
+      if(Math.abs(dx)<58 || Math.abs(dx)<Math.abs(dy)) return;   // dikey kaydırmayı bozma
+      fired=true; this.pick(this.state.sel + (dx<0?1:-1));
+    });
+    const up=()=>{ down=false; stage.classList.remove("is-drag"); };
+    stage.addEventListener("pointerup",up);
+    stage.addEventListener("pointercancel",up);
+    stage.addEventListener("pointerleave",up);
+  }
+
+  pick(i){
+    const n=MODULES.length;
+    const next=((i%n)+n)%n;
+    if(next===this.state.sel) return;
+    this.setState((s)=>({ sel:next, tick:s.tick+1 }));
+  }
+
+  icons(){ if(window.lucide&&window.lucide.createIcons){ try{ window.lucide.createIcons(); }catch(e){} } }
+
+  waitGsap(){ this.initGsap(); }
+
+  renderVals(){
+    const sel = this.state.sel, tick = this.state.tick;
+    const N = MODULES.length, R = 39;
+    const ang = (i)=> (-90 + i*(360/N)) * Math.PI/180;
+    const two = (i)=> String(i+1).padStart(2,"0");
+
+    const modules = MODULES.map((m,i)=>{
+      const a = ang(i);
+      const on = i===sel;
+      return {
+        label:m.label, icon:m.icon, num:two(i), on,
+        x:+(50 + R*Math.cos(a)).toFixed(2),
+        y:+(50 + R*Math.sin(a)).toFixed(2),
+        stroke: on ? "#0b5cff" : "rgba(11,92,255,.16)",
+        sw: on ? 1.6 : 1,
+        border: on ? "rgba(11,92,255,.5)" : "rgba(13,27,46,.09)",
+        bg: on ? "#ffffff" : "rgba(255,255,255,.86)",
+        shadow: on ? "0 14px 32px -18px rgba(11,92,255,.55),0 0 0 3px rgba(11,92,255,.07)" : "0 10px 26px -20px rgba(9,38,84,.4)",
+        iconColor: on ? "#0b5cff" : "#8a97ab",
+        numColor: on ? "#0847c4" : "#8a97ab",
+        labelColor: on ? "#0a1424" : "#4c5a70",
+        delay: (0.05 + i*0.035).toFixed(3) + "s",
+        select: ()=>this.pick(i),
+      };
+    });
+
+    const nav = MODULES.map((m,i)=>({
+      label:m.label, num:two(i), on:i===sel,
+      color: i===sel ? "#0b5cff" : "#55637a",
+      weight: i===sel ? 600 : 500,
+      bar: i===sel ? 1 : 0,
+      select: ()=>this.pick(i),
+    }));
+
+    const a = ang(sel);
+    const odd = tick % 2 === 1;
+
+    return {
+      modules, nav,
+      sel: MODULES[sel],
+      pulseX:+(50 + R*Math.cos(a)).toFixed(2),
+      pulseY:+(50 + R*Math.sin(a)).toFixed(2),
+      pulseAnim: odd ? "modPulseA" : "modPulseB",
+      beatAnim:  odd ? "modBeatA"  : "modBeatB",
+      swapAnim:  odd ? "modSwapA"  : "modSwapB",
+      counter: two(sel) + " / " + String(N) + " modül",
+      chain: CHAIN,
+      grid: GRID,
+    };
+  }
+}
+
+</script>
+</body>
+</html>
