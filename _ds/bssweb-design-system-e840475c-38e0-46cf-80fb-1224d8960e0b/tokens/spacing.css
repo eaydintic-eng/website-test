@@ -1,0 +1,41 @@
+:root {
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 96px;
+  --space-13: 128px;
+  --space-14: 160px;
+  --space-15: 200px;
+
+  /* Layout */
+  --layout-max: 1240px;
+  --layout-max-wide: 1440px;
+  --layout-gutter: 32px;
+  --layout-gutter-sm: 20px;
+  --section-y: 128px;
+  --section-y-sm: 72px;
+  --grid-columns: 12; /* @kind other */
+  --grid-gap: 24px;
+
+  /* Component metrics — exact, do not snap to a 4px grid */
+  --control-h-sm: 32px;
+  --control-h-md: 40px;
+  --control-h-lg: 48px;
+  --control-pad-x-sm: 12px;
+  --control-pad-x-md: 18px;
+  --control-pad-x-lg: 26px;
+  --nav-h: 64px;
+  --sidenav-w: 232px;
+  --sidenav-w-collapsed: 68px;
+  --card-pad: 22px;
+  --card-pad-lg: 28px;
+}
